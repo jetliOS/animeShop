@@ -9,7 +9,7 @@ import UIKit
 import FirebaseFirestore
 
 protocol HomeViewPresenterProtocol {
-    func goToDetail()
+    func goToDetail(with product: Product)
     func fetchProducts()
 }
 
@@ -17,15 +17,16 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
    
     weak var view: HomeViewProtocol?
     private var router: HomeViewRouterProtocol!
+    var products: [Product] = []
     
     init(view: HomeViewProtocol, router: HomeViewRouterProtocol) {
         self.view = view
         self.router = router
     }
    
-    func goToDetail() {
-        router.routerGoToDetailView()
-    }
+    func goToDetail(with product: Product) {
+            router.routerGoToDetailView(with: product)
+        }
     
     func fetchProducts() {
             Firestore.firestore().collection("productos").getDocuments { snapshot, error in

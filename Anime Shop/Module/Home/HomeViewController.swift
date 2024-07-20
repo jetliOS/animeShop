@@ -10,7 +10,7 @@ import FirebaseFirestore
 
 protocol HomeViewProtocol: AnyObject {
     func displayProducts(_ products: [Product])
-       func displayError(_ message: String)
+    func displayError(_ message: String)
 }
 
 class HomeViewController: UIViewController, HomeViewProtocol{
@@ -113,11 +113,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: view.frame.width * 0.4, height: view.frame.width * 0.5)
+//        CGSize(width: view.frame.width * 0.4, height: view.frame.width * 0.5)
+//        CGSize(width: collectionView.frame.width * 0.5, height: view.frame.width * 0.5)
+        return CGSize(width: (view.frame.width - 50) * 0.5, height: (view.frame.width) * 0.57)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter?.goToDetail()
+        let selectedProduct = products[indexPath.row]
+        presenter?.goToDetail(with: selectedProduct)
     }
 }
 

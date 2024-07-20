@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,24 +11,35 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCollectionViewCell" id="wwR-gN-4pt" customClass="HomeCollectionViewCell" customModule="Anime_Shop" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="156" height="194"/>
+            <rect key="frame" x="0.0" y="0.0" width="156" height="209"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iKK-fg-UYi">
-                <rect key="frame" x="0.0" y="0.0" width="156" height="194"/>
+                <rect key="frame" x="0.0" y="0.0" width="156" height="209"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQD-nE-VZK">
-                        <rect key="frame" x="10" y="10" width="136" height="174"/>
+                        <rect key="frame" x="10" y="10" width="136" height="189"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toroo" translatesAutoresizingMaskIntoConstraints="NO" id="dMb-fL-8Nu">
-                                <rect key="frame" x="15" y="15" width="100" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3R-UK-Hjh">
+                                <rect key="frame" x="15" y="15" width="106" height="106"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toroo" translatesAutoresizingMaskIntoConstraints="NO" id="dMb-fL-8Nu">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="dMb-fL-8Nu" secondAttribute="height" multiplier="1:1" id="THQ-ps-Mca"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="mfH-4D-eSc"/>
-                                    <constraint firstAttribute="height" constant="100" id="rtl-3k-mwX"/>
+                                    <constraint firstAttribute="bottom" secondItem="dMb-fL-8Nu" secondAttribute="bottom" id="FUI-oE-CTF"/>
+                                    <constraint firstItem="dMb-fL-8Nu" firstAttribute="leading" secondItem="A3R-UK-Hjh" secondAttribute="leading" id="nAY-MV-vxX"/>
+                                    <constraint firstAttribute="trailing" secondItem="dMb-fL-8Nu" secondAttribute="trailing" id="nI2-6s-lCe"/>
+                                    <constraint firstItem="dMb-fL-8Nu" firstAttribute="top" secondItem="A3R-UK-Hjh" secondAttribute="top" id="oXO-Xv-oC0"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HlJ-Cm-1Os">
-                                <rect key="frame" x="15.000000000000004" y="125" width="41.333333333333343" height="40"/>
+                                <rect key="frame" x="15.000000000000004" y="131" width="41.333333333333343" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtH-mx-ol5">
                                         <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20"/>
@@ -52,10 +64,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HlJ-Cm-1Os" firstAttribute="top" secondItem="dMb-fL-8Nu" secondAttribute="bottom" constant="10" id="GqD-Se-5b4"/>
-                            <constraint firstItem="dMb-fL-8Nu" firstAttribute="leading" secondItem="LQD-nE-VZK" secondAttribute="leading" constant="15" id="ICb-Kt-flG"/>
-                            <constraint firstItem="HlJ-Cm-1Os" firstAttribute="leading" secondItem="dMb-fL-8Nu" secondAttribute="leading" id="MXX-6K-e8k"/>
-                            <constraint firstItem="dMb-fL-8Nu" firstAttribute="top" secondItem="LQD-nE-VZK" secondAttribute="top" constant="15" id="aGd-JQ-9TS"/>
+                            <constraint firstAttribute="trailing" secondItem="A3R-UK-Hjh" secondAttribute="trailing" constant="15" id="IjK-Ye-mRN"/>
+                            <constraint firstItem="HlJ-Cm-1Os" firstAttribute="leading" secondItem="A3R-UK-Hjh" secondAttribute="leading" id="Klv-q7-vat"/>
+                            <constraint firstItem="A3R-UK-Hjh" firstAttribute="leading" secondItem="LQD-nE-VZK" secondAttribute="leading" constant="15" id="POO-Ho-5Vg"/>
+                            <constraint firstItem="A3R-UK-Hjh" firstAttribute="top" secondItem="LQD-nE-VZK" secondAttribute="top" constant="15" id="y5z-Z5-tp2"/>
+                            <constraint firstItem="HlJ-Cm-1Os" firstAttribute="top" secondItem="A3R-UK-Hjh" secondAttribute="bottom" constant="10" id="zTM-Gh-Ei5"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -66,16 +79,21 @@
                     <constraint firstItem="LQD-nE-VZK" firstAttribute="leading" secondItem="iKK-fg-UYi" secondAttribute="leading" constant="10" id="orm-0H-L2a"/>
                 </constraints>
             </collectionViewCellContentView>
-            <size key="customSize" width="156" height="194"/>
+            <size key="customSize" width="156" height="209"/>
             <connections>
+                <outlet property="containerView" destination="LQD-nE-VZK" id="xjp-qq-owi"/>
+                <outlet property="imageCard" destination="A3R-UK-Hjh" id="NXC-Tm-hyS"/>
                 <outlet property="productImageView" destination="dMb-fL-8Nu" id="W6g-Rd-xmD"/>
                 <outlet property="productNameLabel" destination="mtH-mx-ol5" id="rnM-Te-dh1"/>
                 <outlet property="productPriceLabel" destination="aJI-ZB-j7j" id="BEB-we-gCa"/>
             </connections>
-            <point key="canvasLocation" x="-1253.4351145038167" y="32.394366197183103"/>
+            <point key="canvasLocation" x="-1253.4351145038167" y="37.676056338028168"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="toroo" width="500" height="500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

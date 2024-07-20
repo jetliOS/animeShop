@@ -4,14 +4,28 @@
 //
 //  Created by Jesus Herrera on 20/07/24.
 //
+//
+//import Foundation
+//
+//protocol DetailViewConfiguratorProtocol {
+//    func configure(viewcontroller: DetailViewController)
+//}
+//class DetailViewConfigurator {
+//    func configure(viewcontroller: DetailViewController) {
+//        viewcontroller.presenter = DetailViewPresenter(view: viewcontroller, router: DetailViewRouter(withView: viewcontroller))
+//    }
+//}
 
 import Foundation
 
 protocol DetailViewConfiguratorProtocol {
-    func configure(viewcontroller: DetailViewController)
+    func configure(viewcontroller: DetailViewController, with product: Product)
 }
-class DetailViewConfigurator {
-    func configure(viewcontroller: DetailViewController) {
-        viewcontroller.presenter = DetailViewPresenter(view: viewcontroller, router: DetailViewRouter(withView: viewcontroller))
+
+class DetailViewConfigurator: DetailViewConfiguratorProtocol {
+    func configure(viewcontroller: DetailViewController, with product: Product) {
+        let router = DetailViewRouter(withView: viewcontroller)
+        let presenter = DetailViewPresenter(view: viewcontroller, router: router, product: product)
+        viewcontroller.presenter = presenter
     }
 }

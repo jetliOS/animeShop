@@ -7,7 +7,9 @@
 
 import UIKit
 
-protocol DetailViewProtocol: AnyObject {}
+protocol DetailViewProtocol: AnyObject {
+    func displayProductDetails(_ product: Product)
+}
 
 class DetailViewController: UIViewController, DetailViewProtocol {
     
@@ -40,9 +42,10 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurator.configure(viewcontroller: self)
+//        configurator.configure(viewcontroller: self)
         setupUI()
         configureCartButton()
+        presenter?.loadProductDetails()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,6 +72,16 @@ class DetailViewController: UIViewController, DetailViewProtocol {
             $0.layer.borderWidth = 0
         }
     }
+    
+    func displayProductDetails(_ product: Product) {
+            titleDetail.text = product.name
+            priceDetail.text = String(format: "$%.2f", product.price)
+            descriptionDetail.text = product.description
+            if let url = URL(string: product.imageUrl) {
+            imageDetail.kf.setImage(with: url)
+            }
+            
+        }
     
     // Botón con efecto rebote
     private func animateButton(_ button: UIButton) {

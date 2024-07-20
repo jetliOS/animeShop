@@ -17,6 +17,7 @@
 		FD516CAC2C4C42E700862C9B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FD516CAB2C4C42E700862C9B /* FirebaseFirestore */; };
 		FD516CAE2C4C42ED00862C9B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FD516CAD2C4C42ED00862C9B /* FirebaseDatabase */; };
 		FD516CB02C4C450E00862C9B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD516CAF2C4C450E00862C9B /* Product.swift */; };
+		FD516CB22C4C532C00862C9B /* ContainerShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD516CB12C4C532C00862C9B /* ContainerShadowView.swift */; };
 		FD8795D42C4BFD9D008DE383 /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D32C4BFD9D008DE383 /* HomeViewPresenter.swift */; };
 		FD8795D62C4BFDB0008DE383 /* HomeViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D52C4BFDB0008DE383 /* HomeViewConfigurator.swift */; };
 		FD8795D82C4BFDC1008DE383 /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D72C4BFDC1008DE383 /* HomeViewRouter.swift */; };
@@ -46,6 +47,7 @@
 		FD2B7D922C4BA282008FDB5D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FD516C9D2C4C327F00862C9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FD516CAF2C4C450E00862C9B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		FD516CB12C4C532C00862C9B /* ContainerShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerShadowView.swift; sourceTree = "<group>"; };
 		FD8795D32C4BFD9D008DE383 /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
 		FD8795D52C4BFDB0008DE383 /* HomeViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewConfigurator.swift; sourceTree = "<group>"; };
 		FD8795D72C4BFDC1008DE383 /* HomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				FD2B7D8C2C4B9028008FDB5D /* TextStyles.swift */,
 				FD2B7D8E2C4B93D5008FDB5D /* ButtonStyles.swift */,
 				FD516CAF2C4C450E00862C9B /* Product.swift */,
+				FD516CB12C4C532C00862C9B /* ContainerShadowView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				FD8795E22C4C00B4008DE383 /* DetailViewRouter.swift in Sources */,
 				FD8795DE2C4C009C008DE383 /* DetailViewPresenter.swift in Sources */,
 				FD9E49842C4B6C5C00906862 /* HomeCollectionViewCell.swift in Sources */,
+				FD516CB22C4C532C00862C9B /* ContainerShadowView.swift in Sources */,
 				FD2B7D8B2C4B8DBA008FDB5D /* HexColors.swift in Sources */,
 				FD9E49692C4B623E00906862 /* WelcomeViewController.swift in Sources */,
 				FD8795D42C4BFD9D008DE383 /* HomeViewPresenter.swift in Sources */,
