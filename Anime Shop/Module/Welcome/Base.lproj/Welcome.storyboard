@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TVh-O3-a9J">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toroo" translatesAutoresizingMaskIntoConstraints="NO" id="TVh-O3-a9J">
                                 <rect key="frame" x="96.666666666666686" y="276" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="TOJ-jG-q6n"/>
@@ -40,6 +40,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qWE-y7-v42"/>
+                    <connections>
+                        <outlet property="imageWelcome" destination="TVh-O3-a9J" id="4VX-c6-qJu"/>
+                        <outlet property="labelWelcome" destination="oEM-e9-Pcz" id="Y3G-hf-ctq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,6 +69,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="toroo" width="500" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

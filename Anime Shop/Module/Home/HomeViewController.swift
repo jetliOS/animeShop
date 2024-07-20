@@ -51,11 +51,10 @@ class HomeViewController: UIViewController, HomeViewProtocol{
     }
     
     private func setupButtonTitles() {
-        // Ensure the labels array and buttons array are the same length to avoid out-of-index errors
         for (index, label) in labelCollectionCategories.enumerated() where index < buttonCategories.count {
             label.text = ["Categoría 1", "Categoría 2", "Categoría 3", "Categoría 4"][index]
             label.font = UIFont(name: "Avenir-Light", size: 16) ?? UIFont.systemFont(ofSize: 16)
-            buttonCategories[index].setButtonStyle(.deselected)  // Apply initial button style
+            buttonCategories[index].setButtonStyle(.deselected)
         }
     }
     

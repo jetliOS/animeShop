@@ -120,6 +120,16 @@
 			path = HomeCell;
 			sourceTree = "<group>";
 		};
+		FD8795E62C4C1122008DE383 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FD2B7D8A2C4B8DBA008FDB5D /* HexColors.swift */,
+				FD2B7D8C2C4B9028008FDB5D /* TextStyles.swift */,
+				FD2B7D8E2C4B93D5008FDB5D /* ButtonStyles.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		FD9E49582C4B623E00906862 = {
 			isa = PBXGroup;
 			children = (
@@ -141,10 +151,8 @@
 			children = (
 				FD9E49642C4B623E00906862 /* AppDelegate.swift */,
 				FD9E49662C4B623E00906862 /* SceneDelegate.swift */,
-				FD2B7D8A2C4B8DBA008FDB5D /* HexColors.swift */,
-				FD2B7D8C2C4B9028008FDB5D /* TextStyles.swift */,
-				FD2B7D8E2C4B93D5008FDB5D /* ButtonStyles.swift */,
 				FD9E496F2C4B624000906862 /* LaunchScreen.storyboard */,
+				FD8795E62C4C1122008DE383 /* Utilities */,
 				FD8795E42C4C0410008DE383 /* Module */,
 				FD9E496D2C4B624000906862 /* Assets.xcassets */,
 				FD9E49722C4B624000906862 /* Info.plist */,
