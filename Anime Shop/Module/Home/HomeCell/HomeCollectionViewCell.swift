@@ -8,13 +8,10 @@
 import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var imageCell: UIImageView!
-    @IBOutlet weak var labelName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
 
 }
