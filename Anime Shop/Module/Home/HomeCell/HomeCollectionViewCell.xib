@@ -67,6 +67,11 @@
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="156" height="194"/>
+            <connections>
+                <outlet property="productImageView" destination="dMb-fL-8Nu" id="W6g-Rd-xmD"/>
+                <outlet property="productNameLabel" destination="mtH-mx-ol5" id="rnM-Te-dh1"/>
+                <outlet property="productPriceLabel" destination="aJI-ZB-j7j" id="BEB-we-gCa"/>
+            </connections>
             <point key="canvasLocation" x="-1253.4351145038167" y="32.394366197183103"/>
         </collectionViewCell>
     </objects>

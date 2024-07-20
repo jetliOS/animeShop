@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
-protocol HomeViewProtocol: AnyObject {}
+protocol HomeViewProtocol: AnyObject {
+    func displayProducts(_ products: [Product])
+       func displayError(_ message: String)
+}
 
 class HomeViewController: UIViewController, HomeViewProtocol{
     
@@ -22,6 +26,7 @@ class HomeViewController: UIViewController, HomeViewProtocol{
     // MARK: - Properties
     var presenter: HomeViewPresenterProtocol?
     let configurator = HomeViewConfigurator()
+    var products: [Product] = []
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -29,6 +34,7 @@ class HomeViewController: UIViewController, HomeViewProtocol{
         configurator.configure(viewcontroller: self)
         setupUI()
         registerCollectionViewCells()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +47,9 @@ class HomeViewController: UIViewController, HomeViewProtocol{
         setupButtonTitles()
         setupLabels()
         setupSearchBar()
+        presenter?.fetchProducts()
     }
+    
     
     private func registerCollectionViewCells() {
         let nibName = UINib(nibName: "HomeCollectionViewCell", bundle: nil)
@@ -81,16 +89,26 @@ class HomeViewController: UIViewController, HomeViewProtocol{
             labelCollectionCategories[index].textColor = isSelected ? .black : .gray
         }
     }
+    func displayProducts(_ products: [Product]) {
+        self.products = products
+        homeCollectionView.reloadData()
+    }
+    
+    func displayError(_ message: String) {
+        // Mostrar algún tipo de alerta o vista de error
+    }
 }
 
 // MARK: - UICollectionView Extension
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
+        let product = products[indexPath.row]
+        cell.configure(with: product)
         return cell
     }
     

@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52833C9B58D41538A9BDBABF /* Pods_Anime_Shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C649DE73CB27F8B9FA2244 /* Pods_Anime_Shop.framework */; };
 		FD2B7D8B2C4B8DBA008FDB5D /* HexColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B7D8A2C4B8DBA008FDB5D /* HexColors.swift */; };
 		FD2B7D8D2C4B9028008FDB5D /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B7D8C2C4B9028008FDB5D /* TextStyles.swift */; };
 		FD2B7D8F2C4B93D5008FDB5D /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B7D8E2C4B93D5008FDB5D /* ButtonStyles.swift */; };
 		FD2B7D912C4BA24A008FDB5D /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2B7D902C4BA24A008FDB5D /* DetailView.storyboard */; };
 		FD2B7D932C4BA282008FDB5D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B7D922C4BA282008FDB5D /* DetailViewController.swift */; };
 		FD516C9E2C4C327F00862C9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD516C9D2C4C327F00862C9B /* GoogleService-Info.plist */; };
+		FD516CAC2C4C42E700862C9B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FD516CAB2C4C42E700862C9B /* FirebaseFirestore */; };
+		FD516CAE2C4C42ED00862C9B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FD516CAD2C4C42ED00862C9B /* FirebaseDatabase */; };
+		FD516CB02C4C450E00862C9B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD516CAF2C4C450E00862C9B /* Product.swift */; };
 		FD8795D42C4BFD9D008DE383 /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D32C4BFD9D008DE383 /* HomeViewPresenter.swift */; };
 		FD8795D62C4BFDB0008DE383 /* HomeViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D52C4BFDB0008DE383 /* HomeViewConfigurator.swift */; };
 		FD8795D82C4BFDC1008DE383 /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D72C4BFDC1008DE383 /* HomeViewRouter.swift */; };
@@ -32,12 +36,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5645063118341C3633BF043C /* Pods-Anime Shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anime Shop.release.xcconfig"; path = "Target Support Files/Pods-Anime Shop/Pods-Anime Shop.release.xcconfig"; sourceTree = "<group>"; };
+		75C649DE73CB27F8B9FA2244 /* Pods_Anime_Shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anime_Shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C64F5E44BE70C46C2BB1AA8D /* Pods-Anime Shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anime Shop.debug.xcconfig"; path = "Target Support Files/Pods-Anime Shop/Pods-Anime Shop.debug.xcconfig"; sourceTree = "<group>"; };
 		FD2B7D8A2C4B8DBA008FDB5D /* HexColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColors.swift; sourceTree = "<group>"; };
 		FD2B7D8C2C4B9028008FDB5D /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		FD2B7D8E2C4B93D5008FDB5D /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		FD2B7D902C4BA24A008FDB5D /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
 		FD2B7D922C4BA282008FDB5D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FD516C9D2C4C327F00862C9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FD516CAF2C4C450E00862C9B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		FD8795D32C4BFD9D008DE383 /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
 		FD8795D52C4BFDB0008DE383 /* HomeViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewConfigurator.swift; sourceTree = "<group>"; };
 		FD8795D72C4BFDC1008DE383 /* HomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
@@ -63,12 +71,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD516CAE2C4C42ED00862C9B /* FirebaseDatabase in Frameworks */,
+				FD516CAC2C4C42E700862C9B /* FirebaseFirestore in Frameworks */,
+				52833C9B58D41538A9BDBABF /* Pods_Anime_Shop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FCA4FF167B92560036945F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C64F5E44BE70C46C2BB1AA8D /* Pods-Anime Shop.debug.xcconfig */,
+				5645063118341C3633BF043C /* Pods-Anime Shop.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FD516CAA2C4C42E700862C9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75C649DE73CB27F8B9FA2244 /* Pods_Anime_Shop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FD8795D92C4C001A008DE383 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +156,7 @@
 				FD2B7D8A2C4B8DBA008FDB5D /* HexColors.swift */,
 				FD2B7D8C2C4B9028008FDB5D /* TextStyles.swift */,
 				FD2B7D8E2C4B93D5008FDB5D /* ButtonStyles.swift */,
+				FD516CAF2C4C450E00862C9B /* Product.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -137,6 +166,8 @@
 			children = (
 				FD9E49632C4B623E00906862 /* Anime Shop */,
 				FD9E49622C4B623E00906862 /* Products */,
+				FD516CAA2C4C42E700862C9B /* Frameworks */,
+				1FCA4FF167B92560036945F7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,15 +201,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD9E49752C4B624000906862 /* Build configuration list for PBXNativeTarget "Anime Shop" */;
 			buildPhases = (
+				121A4516661C3EB7352D468D /* [CP] Check Pods Manifest.lock */,
 				FD9E495D2C4B623E00906862 /* Sources */,
 				FD9E495E2C4B623E00906862 /* Frameworks */,
 				FD9E495F2C4B623E00906862 /* Resources */,
+				61487F72B2CC1E5E6E45A905 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Anime Shop";
+			packageProductDependencies = (
+				FD516CAB2C4C42E700862C9B /* FirebaseFirestore */,
+				FD516CAD2C4C42ED00862C9B /* FirebaseDatabase */,
+			);
 			productName = "Anime Shop";
 			productReference = FD9E49612C4B623E00906862 /* Anime Shop.app */;
 			productType = "com.apple.product-type.application";
@@ -207,6 +244,9 @@
 				Base,
 			);
 			mainGroup = FD9E49582C4B623E00906862;
+			packageReferences = (
+				FD516CA92C4C42CC00862C9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = FD9E49622C4B623E00906862 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +273,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		121A4516661C3EB7352D468D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Anime Shop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61487F72B2CC1E5E6E45A905 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Anime Shop/Pods-Anime Shop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Anime Shop/Pods-Anime Shop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Anime Shop/Pods-Anime Shop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FD9E495D2C4B623E00906862 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -247,6 +329,7 @@
 				FD8795D42C4BFD9D008DE383 /* HomeViewPresenter.swift in Sources */,
 				FD8795E02C4C00A9008DE383 /* DetailViewConfigurator.swift in Sources */,
 				FD2B7D8D2C4B9028008FDB5D /* TextStyles.swift in Sources */,
+				FD516CB02C4C450E00862C9B /* Product.swift in Sources */,
 				FD9E49792C4B634400906862 /* HomeViewController.swift in Sources */,
 				FD8795D62C4BFDB0008DE383 /* HomeViewConfigurator.swift in Sources */,
 				FD8795D82C4BFDC1008DE383 /* HomeViewRouter.swift in Sources */,
@@ -399,12 +482,14 @@
 		};
 		FD9E49762C4B624000906862 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C64F5E44BE70C46C2BB1AA8D /* Pods-Anime Shop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 27WP58G8F2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Anime Shop/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -427,12 +512,14 @@
 		};
 		FD9E49772C4B624000906862 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5645063118341C3633BF043C /* Pods-Anime Shop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 27WP58G8F2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Anime Shop/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -475,6 +562,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FD516CA92C4C42CC00862C9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FD516CAB2C4C42E700862C9B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD516CA92C4C42CC00862C9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		FD516CAD2C4C42ED00862C9B /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD516CA92C4C42CC00862C9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FD9E49592C4B623E00906862 /* Project object */;
 }
