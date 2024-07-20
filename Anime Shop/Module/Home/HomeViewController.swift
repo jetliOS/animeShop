@@ -54,7 +54,7 @@ class HomeViewController: UIViewController, HomeViewProtocol{
         for (index, label) in labelCollectionCategories.enumerated() where index < buttonCategories.count {
             label.text = ["Categoría 1", "Categoría 2", "Categoría 3", "Categoría 4"][index]
             label.font = UIFont(name: "Avenir-Light", size: 16) ?? UIFont.systemFont(ofSize: 16)
-            buttonCategories[index].setButtonStyle(.deselected)
+            buttonCategories[index].setButtonStyle(.gray)
         }
     }
     
@@ -77,7 +77,7 @@ class HomeViewController: UIViewController, HomeViewProtocol{
     func updateButtonSelectionStates(for selectedButton: UIButton) {
         for (index, button) in buttonCategories.enumerated() {
             let isSelected = button == selectedButton
-            button.setButtonStyle(isSelected ? .selected : .deselected)
+            button.setButtonStyle(isSelected ? .gradient : .gray)
             labelCollectionCategories[index].textColor = isSelected ? .black : .gray
         }
     }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyC1mQMy4k6vpGSMQY9kyY5mwyGBeICoWg4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>570743119080</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>jet.co.Anime-Shop</string>
+	<key>PROJECT_ID</key>
+	<string>animeshop-83075</string>
+	<key>STORAGE_BUCKET</key>
+	<string>animeshop-83075.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:570743119080:ios:56d4f4d17be2310105fd5d</string>
+</dict>
+</plist>

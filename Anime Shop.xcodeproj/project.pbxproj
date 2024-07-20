@@ -12,6 +12,7 @@
 		FD2B7D8F2C4B93D5008FDB5D /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B7D8E2C4B93D5008FDB5D /* ButtonStyles.swift */; };
 		FD2B7D912C4BA24A008FDB5D /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2B7D902C4BA24A008FDB5D /* DetailView.storyboard */; };
 		FD2B7D932C4BA282008FDB5D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B7D922C4BA282008FDB5D /* DetailViewController.swift */; };
+		FD516C9E2C4C327F00862C9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD516C9D2C4C327F00862C9B /* GoogleService-Info.plist */; };
 		FD8795D42C4BFD9D008DE383 /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D32C4BFD9D008DE383 /* HomeViewPresenter.swift */; };
 		FD8795D62C4BFDB0008DE383 /* HomeViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D52C4BFDB0008DE383 /* HomeViewConfigurator.swift */; };
 		FD8795D82C4BFDC1008DE383 /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D72C4BFDC1008DE383 /* HomeViewRouter.swift */; };
@@ -36,6 +37,7 @@
 		FD2B7D8E2C4B93D5008FDB5D /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		FD2B7D902C4BA24A008FDB5D /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
 		FD2B7D922C4BA282008FDB5D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FD516C9D2C4C327F00862C9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FD8795D32C4BFD9D008DE383 /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
 		FD8795D52C4BFDB0008DE383 /* HomeViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewConfigurator.swift; sourceTree = "<group>"; };
 		FD8795D72C4BFDC1008DE383 /* HomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				FD8795E62C4C1122008DE383 /* Utilities */,
 				FD8795E42C4C0410008DE383 /* Module */,
 				FD9E496D2C4B624000906862 /* Assets.xcassets */,
+				FD516C9D2C4C327F00862C9B /* GoogleService-Info.plist */,
 				FD9E49722C4B624000906862 /* Info.plist */,
 			);
 			path = "Anime Shop";
@@ -218,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD516C9E2C4C327F00862C9B /* GoogleService-Info.plist in Resources */,
 				FD9E49852C4B6C5C00906862 /* HomeCollectionViewCell.xib in Resources */,
 				FD9E496E2C4B624000906862 /* Assets.xcassets in Resources */,
 				FD2B7D912C4BA24A008FDB5D /* DetailView.storyboard in Resources */,

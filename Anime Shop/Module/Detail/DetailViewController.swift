@@ -29,17 +29,20 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var addCartBtn: UIButton!
     @IBOutlet weak var cartIndicatorButton: UIButton!
+    @IBOutlet weak var labelButton: UILabel!
     
     // MARK: - Properties
     var presenter: DetailViewPresenterProtocol?
     let configurator = DetailViewConfigurator()
     var digitData: Int = 1
+    var isItemSelected: Bool = false
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(viewcontroller: self)
         setupUI()
+        configureCartButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,28 +50,43 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         navigationController?.navigationBar.isHidden = true
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        configureCartButton()
+    }
+    
     // MARK: - UI Setup
     private func setupUI() {
-        barTitle.text = "Detalles de producto"
-        barTitle.applyStyle(.title)
+        configureContainerViews()
+        configureLabels()
         setupButtons()
         configureDescriptionDetail()
     }
     
     private func setupButtons() {
         [minusButton, plusButton].forEach {
-            $0.layer.cornerRadius = 3
-            $0.backgroundColor = UIColor(hex: "3752A3").withAlphaComponent(0.1)
-            $0.layer.borderColor = UIColor(hex: "3752A3").withAlphaComponent(0.4).cgColor
-            $0.layer.borderWidth = 1
+            $0.tintColor = .black
+            $0.layer.borderWidth = 0
         }
     }
-
+    
+    // Botón con efecto rebote
+    private func animateButton(_ button: UIButton) {
+        UIView.animate(withDuration: 0.1, animations: {
+            button.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        }) { _ in
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 10, options: .curveEaseOut, animations: {
+                button.transform = .identity
+            })
+        }
+    }
+    
     // MARK: - Actions
     @IBAction func minusButtonAction(_ sender: UIButton) {
         if digitData > 1 {
             digitData -= 1
             updateStepper()
+            animateButton(sender)
         }
     }
     
@@ -76,6 +94,7 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         if digitData < 10 {
             digitData += 1
             updateStepper()
+            animateButton(sender)
         }
     }
     
@@ -83,14 +102,15 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         labelUnity.text = "\(digitData)"
     }
     
-    @IBAction func addCartAction(_ sender: Any) {
-        // Implementation needed
+    @IBAction func addCartBtnTapped(_ sender: Any) {
+        isItemSelected.toggle()
+        configureCartButton()
     }
     
     @IBAction func backAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-
+    
     // MARK: - Configurations
     private func configureDescriptionDetail() {
         let paragraphStyle = NSMutableParagraphStyle()
@@ -108,9 +128,38 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         descriptionDetail.attributedText = NSAttributedString(string: descriptionDetail.text ?? "", attributes: attributes)
         descriptionDetail.textAlignment = .justified
     }
+    
+    private func configureLabels() {
+        barTitle.text = "Detalles de producto"
+        barTitle.applyStyle(.subtitle)
+        
+        titleDetail.applyStyle(.subtitle)
+        titleDetail.textColor = UIColor(hex: "#374259")
+        
+        priceDetail.applyStyle(.subtitle)
+        priceDetail.textColor = UIColor(hex: "#374259")
+        
+        descriptionDetail.applyStyle(.body)
+        descriptionDetail.textColor = UIColor(hex: "#374259")
+        
+        totalPriceLabel.text = "$ 140.00"
+        totalPriceLabel.applyStyle(.body)
+        totalPriceLabel.textColor = UIColor(hex: "#374259")
+        
+        totalLabel.text = "TOTAL"
+        totalLabel.applyStyle(.body)
+        totalLabel.textColor = UIColor(hex: "#374259")
+    }
+    
+    private func configureContainerViews() {
+        containerView2.layer.cornerRadius = 20
+        containerStepper.layer.cornerRadius = containerStepper.frame.size.height / 2
+    }
+    
+    private func configureCartButton() {
+        addCartBtn.setButtonStyle(isItemSelected ? .gradient : .gray)
+        labelButton.text = "Añadir al carrito"
+        labelButton.applyStyle(.subtitle)
+    }
 }
-
-    
-    
-
 

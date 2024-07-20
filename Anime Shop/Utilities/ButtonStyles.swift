@@ -13,14 +13,14 @@ struct ButtonStyle {
     var borderColor: UIColor
     var borderWidth: CGFloat
 
-    static let selected = ButtonStyle(
+    static let gradient = ButtonStyle(
         backgroundColor: .clear,
         gradientColors: [UIColor(hex: "E2BAF1").cgColor, UIColor(hex: "989DEF").cgColor],
         borderColor: .blue,
         borderWidth: 0
     )
 
-    static let deselected = ButtonStyle(
+    static let gray = ButtonStyle(
         backgroundColor: UIColor(hex: "EFEEF2"),
         gradientColors: nil,
         borderColor: .clear,
