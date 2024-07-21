@@ -57,7 +57,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     }
     
     private func setupButtonTitles() {
-        let buttonTitles = ["Todos", "Figura de Accion", "Clothes", "Manga", "Categoría 4"]
+        let buttonTitles = ["Todos", "Figura de Accion", "Ropa", "Peluches", "Accesorios"]
         for (index, label) in labelCollectionCategories.enumerated() where index < buttonCategories.count {
             label.text = buttonTitles[index]
             label.font = UIFont(name: "Avenir-Light", size: 16) ?? UIFont.systemFont(ofSize: 16)
@@ -130,7 +130,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 // MARK: - UISearchBar Delegate
 extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        // Reinicia la selección de categorías a "ALL"
         if let allButton = buttonCategories.first(where: { labelCollectionCategories[buttonCategories.firstIndex(of: $0)!].text == "ALL" }) {
             updateButtonSelectionStates(for: allButton)
         }
