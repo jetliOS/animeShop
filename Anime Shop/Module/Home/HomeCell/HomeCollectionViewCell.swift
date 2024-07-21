@@ -30,15 +30,16 @@ class HomeCollectionViewCell: UICollectionViewCell {
         }
     }
     func configureLabels() {
-        productNameLabel.applyStyle(.body)
+        productNameLabel.numberOfLines = 0
+        productNameLabel.font = UIFont(name: "Avenir-Medium", size: 14)
+        productNameLabel.translatesAutoresizingMaskIntoConstraints = false
         productPriceLabel.applyStyle(.body)
     }
     
     func configureContainers() {
         
         containerView.layer.cornerRadius = 15
-        containerView.backgroundColor = UIColor(hex: "E9E7F7")
-        imageCard.setupShadow(shadowColor: .lightGray)
+        containerView.setupShadowHex(shadowColorHex: "#7E92DE")
         imageCard.layer.cornerRadius = 10
     
     }

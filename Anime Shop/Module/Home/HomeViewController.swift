@@ -130,7 +130,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 // MARK: - UISearchBar Delegate
 extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if let allButton = buttonCategories.first(where: { labelCollectionCategories[buttonCategories.firstIndex(of: $0)!].text == "ALL" }) {
+        if let allButton = buttonCategories.first(where: { labelCollectionCategories[buttonCategories.firstIndex(of: $0)!].text == "Todos" }) {
             updateButtonSelectionStates(for: allButton)
         }
         

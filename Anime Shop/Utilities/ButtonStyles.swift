@@ -15,7 +15,7 @@ struct ButtonStyle {
 
     static let gradient = ButtonStyle(
         backgroundColor: .clear,
-        gradientColors: [UIColor(hex: "E2BAF1").cgColor, UIColor(hex: "989DEF").cgColor],
+        gradientColors: [UIColor(hex: "E2BAF1").cgColor, UIColor(hex: "9198ff").cgColor],
         borderColor: .blue,
         borderWidth: 0
     )

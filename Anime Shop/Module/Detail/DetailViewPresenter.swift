@@ -8,9 +8,11 @@
 import UIKit
 
 protocol DetailViewPresenterProtocol {
+    var currentProduct: Product? { get }
     func goToCart()
     func goToHome()
     func loadProductDetails()
+    func updateTotalPrice(for quantity: Int)
 }
 
 class DetailViewPresenter: DetailViewPresenterProtocol {
@@ -25,6 +27,9 @@ class DetailViewPresenter: DetailViewPresenterProtocol {
         self.product = product
     }
    
+    var currentProduct: Product? {
+            return product
+        }
     
     func goToCart() {
         router.routerGoToCartView()
@@ -34,5 +39,9 @@ class DetailViewPresenter: DetailViewPresenterProtocol {
     }
     func loadProductDetails() {
             view?.displayProductDetails(product)
+        }
+    func updateTotalPrice(for quantity: Int) {
+            let totalPrice = Double(quantity) * product.price
+            view?.updateTotalPriceLabel(with: totalPrice)
         }
 }
