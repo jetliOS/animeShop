@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		52833C9B58D41538A9BDBABF /* Pods_Anime_Shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C649DE73CB27F8B9FA2244 /* Pods_Anime_Shop.framework */; };
+		FD0A579B2C4CE00300D543FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A579A2C4CE00300D543FA /* LoginViewController.swift */; };
+		FD0A579D2C4CE01400D543FA /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A579C2C4CE01400D543FA /* LoginViewPresenter.swift */; };
+		FD0A579F2C4CE01F00D543FA /* LoginViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A579E2C4CE01F00D543FA /* LoginViewRouter.swift */; };
+		FD0A57A12C4CE03000D543FA /* LoginViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57A02C4CE03000D543FA /* LoginViewConfigurator.swift */; };
+		FD0A57A42C4CE04F00D543FA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57A32C4CE04F00D543FA /* RegisterViewController.swift */; };
+		FD0A57A62C4CE05C00D543FA /* RegisterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57A52C4CE05C00D543FA /* RegisterViewPresenter.swift */; };
+		FD0A57A82C4CE06800D543FA /* RegisterViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57A72C4CE06800D543FA /* RegisterViewRouter.swift */; };
+		FD0A57AA2C4CE07A00D543FA /* RegisterViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A57A92C4CE07A00D543FA /* RegisterViewConfigurator.swift */; };
 		FD2B7D8B2C4B8DBA008FDB5D /* HexColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B7D8A2C4B8DBA008FDB5D /* HexColors.swift */; };
 		FD2B7D8D2C4B9028008FDB5D /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B7D8C2C4B9028008FDB5D /* TextStyles.swift */; };
 		FD2B7D8F2C4B93D5008FDB5D /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B7D8E2C4B93D5008FDB5D /* ButtonStyles.swift */; };
@@ -18,6 +26,10 @@
 		FD516CAE2C4C42ED00862C9B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FD516CAD2C4C42ED00862C9B /* FirebaseDatabase */; };
 		FD516CB02C4C450E00862C9B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD516CAF2C4C450E00862C9B /* Product.swift */; };
 		FD516CB22C4C532C00862C9B /* ContainerShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD516CB12C4C532C00862C9B /* ContainerShadowView.swift */; };
+		FD8617192C4CE3DB00ACE181 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FD8617182C4CE3DB00ACE181 /* FirebaseAuth */; };
+		FD86171B2C4CE83D00ACE181 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD86171A2C4CE83D00ACE181 /* Login.storyboard */; };
+		FD86171D2C4CEEA500ACE181 /* LevitatingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86171C2C4CEEA500ACE181 /* LevitatingAnimation.swift */; };
+		FD8617232C4D6CDA00ACE181 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8617222C4D6CDA00ACE181 /* Register.storyboard */; };
 		FD8795D42C4BFD9D008DE383 /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D32C4BFD9D008DE383 /* HomeViewPresenter.swift */; };
 		FD8795D62C4BFDB0008DE383 /* HomeViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D52C4BFDB0008DE383 /* HomeViewConfigurator.swift */; };
 		FD8795D82C4BFDC1008DE383 /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D72C4BFDC1008DE383 /* HomeViewRouter.swift */; };
@@ -40,6 +52,14 @@
 		5645063118341C3633BF043C /* Pods-Anime Shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anime Shop.release.xcconfig"; path = "Target Support Files/Pods-Anime Shop/Pods-Anime Shop.release.xcconfig"; sourceTree = "<group>"; };
 		75C649DE73CB27F8B9FA2244 /* Pods_Anime_Shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anime_Shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64F5E44BE70C46C2BB1AA8D /* Pods-Anime Shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anime Shop.debug.xcconfig"; path = "Target Support Files/Pods-Anime Shop/Pods-Anime Shop.debug.xcconfig"; sourceTree = "<group>"; };
+		FD0A579A2C4CE00300D543FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FD0A579C2C4CE01400D543FA /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
+		FD0A579E2C4CE01F00D543FA /* LoginViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewRouter.swift; sourceTree = "<group>"; };
+		FD0A57A02C4CE03000D543FA /* LoginViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewConfigurator.swift; sourceTree = "<group>"; };
+		FD0A57A32C4CE04F00D543FA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FD0A57A52C4CE05C00D543FA /* RegisterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewPresenter.swift; sourceTree = "<group>"; };
+		FD0A57A72C4CE06800D543FA /* RegisterViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewRouter.swift; sourceTree = "<group>"; };
+		FD0A57A92C4CE07A00D543FA /* RegisterViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewConfigurator.swift; sourceTree = "<group>"; };
 		FD2B7D8A2C4B8DBA008FDB5D /* HexColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColors.swift; sourceTree = "<group>"; };
 		FD2B7D8C2C4B9028008FDB5D /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		FD2B7D8E2C4B93D5008FDB5D /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
@@ -48,6 +68,9 @@
 		FD516C9D2C4C327F00862C9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FD516CAF2C4C450E00862C9B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		FD516CB12C4C532C00862C9B /* ContainerShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerShadowView.swift; sourceTree = "<group>"; };
+		FD86171A2C4CE83D00ACE181 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		FD86171C2C4CEEA500ACE181 /* LevitatingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevitatingAnimation.swift; sourceTree = "<group>"; };
+		FD8617222C4D6CDA00ACE181 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		FD8795D32C4BFD9D008DE383 /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
 		FD8795D52C4BFDB0008DE383 /* HomeViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewConfigurator.swift; sourceTree = "<group>"; };
 		FD8795D72C4BFDC1008DE383 /* HomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
@@ -76,6 +99,7 @@
 				FD516CAE2C4C42ED00862C9B /* FirebaseDatabase in Frameworks */,
 				FD516CAC2C4C42E700862C9B /* FirebaseFirestore in Frameworks */,
 				52833C9B58D41538A9BDBABF /* Pods_Anime_Shop.framework in Frameworks */,
+				FD8617192C4CE3DB00ACE181 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +113,30 @@
 				5645063118341C3633BF043C /* Pods-Anime Shop.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FD0A57992C4CDFE900D543FA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FD86171A2C4CE83D00ACE181 /* Login.storyboard */,
+				FD0A579A2C4CE00300D543FA /* LoginViewController.swift */,
+				FD0A579C2C4CE01400D543FA /* LoginViewPresenter.swift */,
+				FD0A57A02C4CE03000D543FA /* LoginViewConfigurator.swift */,
+				FD0A579E2C4CE01F00D543FA /* LoginViewRouter.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FD0A57A22C4CE03800D543FA /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FD8617222C4D6CDA00ACE181 /* Register.storyboard */,
+				FD0A57A32C4CE04F00D543FA /* RegisterViewController.swift */,
+				FD0A57A52C4CE05C00D543FA /* RegisterViewPresenter.swift */,
+				FD0A57A92C4CE07A00D543FA /* RegisterViewConfigurator.swift */,
+				FD0A57A72C4CE06800D543FA /* RegisterViewRouter.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		FD516CAA2C4C42E700862C9B /* Frameworks */ = {
@@ -136,6 +184,8 @@
 		FD8795E42C4C0410008DE383 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				FD0A57A22C4CE03800D543FA /* Register */,
+				FD0A57992C4CDFE900D543FA /* Login */,
 				FD8795E32C4C03F2008DE383 /* Welcome */,
 				FD8795D92C4C001A008DE383 /* Home */,
 				FD8795DA2C4C0069008DE383 /* Detail */,
@@ -160,6 +210,7 @@
 				FD2B7D8E2C4B93D5008FDB5D /* ButtonStyles.swift */,
 				FD516CAF2C4C450E00862C9B /* Product.swift */,
 				FD516CB12C4C532C00862C9B /* ContainerShadowView.swift */,
+				FD86171C2C4CEEA500ACE181 /* LevitatingAnimation.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -218,6 +269,7 @@
 			packageProductDependencies = (
 				FD516CAB2C4C42E700862C9B /* FirebaseFirestore */,
 				FD516CAD2C4C42ED00862C9B /* FirebaseDatabase */,
+				FD8617182C4CE3DB00ACE181 /* FirebaseAuth */,
 			);
 			productName = "Anime Shop";
 			productReference = FD9E49612C4B623E00906862 /* Anime Shop.app */;
@@ -264,10 +316,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD86171B2C4CE83D00ACE181 /* Login.storyboard in Resources */,
 				FD516C9E2C4C327F00862C9B /* GoogleService-Info.plist in Resources */,
 				FD9E49852C4B6C5C00906862 /* HomeCollectionViewCell.xib in Resources */,
 				FD9E496E2C4B624000906862 /* Assets.xcassets in Resources */,
 				FD2B7D912C4BA24A008FDB5D /* DetailView.storyboard in Resources */,
+				FD8617232C4D6CDA00ACE181 /* Register.storyboard in Resources */,
 				FD9E49712C4B624000906862 /* Base in Resources */,
 				FD9E496C2C4B623E00906862 /* Base in Resources */,
 				FD9E497D2C4B636500906862 /* Home.storyboard in Resources */,
@@ -323,13 +377,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD0A579B2C4CE00300D543FA /* LoginViewController.swift in Sources */,
+				FD0A57A42C4CE04F00D543FA /* RegisterViewController.swift in Sources */,
+				FD0A57A62C4CE05C00D543FA /* RegisterViewPresenter.swift in Sources */,
+				FD0A579D2C4CE01400D543FA /* LoginViewPresenter.swift in Sources */,
 				FD2B7D932C4BA282008FDB5D /* DetailViewController.swift in Sources */,
+				FD0A57AA2C4CE07A00D543FA /* RegisterViewConfigurator.swift in Sources */,
 				FD8795E22C4C00B4008DE383 /* DetailViewRouter.swift in Sources */,
 				FD8795DE2C4C009C008DE383 /* DetailViewPresenter.swift in Sources */,
 				FD9E49842C4B6C5C00906862 /* HomeCollectionViewCell.swift in Sources */,
 				FD516CB22C4C532C00862C9B /* ContainerShadowView.swift in Sources */,
 				FD2B7D8B2C4B8DBA008FDB5D /* HexColors.swift in Sources */,
+				FD0A57A12C4CE03000D543FA /* LoginViewConfigurator.swift in Sources */,
 				FD9E49692C4B623E00906862 /* WelcomeViewController.swift in Sources */,
+				FD86171D2C4CEEA500ACE181 /* LevitatingAnimation.swift in Sources */,
 				FD8795D42C4BFD9D008DE383 /* HomeViewPresenter.swift in Sources */,
 				FD8795E02C4C00A9008DE383 /* DetailViewConfigurator.swift in Sources */,
 				FD2B7D8D2C4B9028008FDB5D /* TextStyles.swift in Sources */,
@@ -338,6 +399,8 @@
 				FD8795D62C4BFDB0008DE383 /* HomeViewConfigurator.swift in Sources */,
 				FD8795D82C4BFDC1008DE383 /* HomeViewRouter.swift in Sources */,
 				FD2B7D8F2C4B93D5008FDB5D /* ButtonStyles.swift in Sources */,
+				FD0A57A82C4CE06800D543FA /* RegisterViewRouter.swift in Sources */,
+				FD0A579F2C4CE01F00D543FA /* LoginViewRouter.swift in Sources */,
 				FD9E49652C4B623E00906862 /* AppDelegate.swift in Sources */,
 				FD9E49672C4B623E00906862 /* SceneDelegate.swift in Sources */,
 			);
@@ -588,6 +651,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FD516CA92C4C42CC00862C9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		FD8617182C4CE3DB00ACE181 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD516CA92C4C42CC00862C9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -12,6 +12,9 @@ class WelcomeViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var imageWelcome: UIImageView!
     @IBOutlet weak var labelWelcome: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var omitirButton: UIButton!
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -25,7 +28,18 @@ class WelcomeViewController: UIViewController {
         super.viewDidAppear(animated)
         animateElements()
     }
+    // MARK: - Actions
+    @IBAction func loginTapped(_ sender: Any) {
+        goToLoginView()
+    }
     
+    @IBAction func registerTapped(_ sender: Any) {
+        goToRegisterView()
+    }
+    
+    @IBAction func omitirTapped(_ sender: Any) {
+        presentHomeViewController()
+    }
     // MARK: - Setup Methods
     private func setupLabel() {
         let text = "AnimeShop"
@@ -59,15 +73,32 @@ class WelcomeViewController: UIViewController {
     // MARK: - Navigation
     private func delayPresentation() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.presentHomeViewController()
+            print("listo")
+//            self.presentHomeViewController()
         }
     }
+    
+    
+    
+    // MARK: - ROUTER Navigate options
     
     private func presentHomeViewController() {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func goToLoginView() {
+        let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+        let didTapSnackBarAlert = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+        self.navigationController?.pushViewController(didTapSnackBarAlert!, animated: true)
+    }
+    
+    func goToRegisterView() {
+        let storyBoard = UIStoryboard(name: "Register", bundle: nil)
+        let didTapSnackBarAlert = storyBoard.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController
+        self.navigationController?.pushViewController(didTapSnackBarAlert!, animated: true)
     }
 }
 

@@ -29,20 +29,65 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rq4-z5-PpL">
+                                <rect key="frame" x="30" y="683" width="333" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Gig-3A-imY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="registerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pMn-t6-Kn3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ht-cx-4SO">
+                                <rect key="frame" x="30" y="743" width="333" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="ljP-1K-05b"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="omitirTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddr-LD-hYh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH8-7Y-zaB">
+                                <rect key="frame" x="30" y="628" width="333" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="asL-7v-NPI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="52D-cq-TuW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TVh-O3-a9J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2y9-1z-qLr"/>
                             <constraint firstItem="oEM-e9-Pcz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2yA-Zg-sne"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rq4-z5-PpL" secondAttribute="trailing" constant="30" id="4s3-K8-0TX"/>
+                            <constraint firstItem="4ht-cx-4SO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="5Zd-Yc-fKX"/>
                             <constraint firstItem="oEM-e9-Pcz" firstAttribute="top" secondItem="TVh-O3-a9J" secondAttribute="bottom" constant="20" id="Ahs-sQ-zyC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4ht-cx-4SO" secondAttribute="trailing" constant="30" id="Fj4-mx-YNc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YH8-7Y-zaB" secondAttribute="trailing" constant="30" id="HE6-IA-ydC"/>
+                            <constraint firstItem="4ht-cx-4SO" firstAttribute="top" secondItem="Rq4-z5-PpL" secondAttribute="bottom" constant="15" id="N7X-uw-AHw"/>
+                            <constraint firstItem="Rq4-z5-PpL" firstAttribute="top" secondItem="YH8-7Y-zaB" secondAttribute="bottom" constant="10" id="OBF-wi-JJ1"/>
                             <constraint firstItem="TVh-O3-a9J" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="PbG-a3-k6D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4ht-cx-4SO" secondAttribute="bottom" constant="30" id="axK-kS-xgI"/>
+                            <constraint firstItem="Rq4-z5-PpL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="kbQ-xR-x92"/>
+                            <constraint firstItem="YH8-7Y-zaB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="mwD-nl-PO8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qWE-y7-v42"/>
                     <connections>
                         <outlet property="imageWelcome" destination="TVh-O3-a9J" id="4VX-c6-qJu"/>
                         <outlet property="labelWelcome" destination="oEM-e9-Pcz" id="Y3G-hf-ctq"/>
+                        <outlet property="loginButton" destination="YH8-7Y-zaB" id="q0S-HH-lYj"/>
+                        <outlet property="omitirButton" destination="4ht-cx-4SO" id="GNi-vb-XkK"/>
+                        <outlet property="registerButton" destination="Rq4-z5-PpL" id="Apu-dV-VQJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
