@@ -4,7 +4,6 @@
 //
 //  Created by Jesus Herrera on 19/07/24.
 //
-
 import UIKit
 import FirebaseFirestore
 
@@ -13,7 +12,7 @@ protocol HomeViewProtocol: AnyObject {
     func displayError(_ message: String)
 }
 
-class HomeViewController: UIViewController, HomeViewProtocol{
+class HomeViewController: UIViewController, HomeViewProtocol {
     
     // MARK: - Outlets
     @IBOutlet weak var labelTitle: UILabel!
@@ -34,7 +33,7 @@ class HomeViewController: UIViewController, HomeViewProtocol{
         configurator.configure(viewcontroller: self)
         setupUI()
         registerCollectionViewCells()
-        
+        searchBar.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +49,6 @@ class HomeViewController: UIViewController, HomeViewProtocol{
         presenter?.fetchProducts()
     }
     
-    
     private func registerCollectionViewCells() {
         let nibName = UINib(nibName: "HomeCollectionViewCell", bundle: nil)
         homeCollectionView.register(nibName, forCellWithReuseIdentifier: "HomeCollectionViewCell")
@@ -59,8 +57,9 @@ class HomeViewController: UIViewController, HomeViewProtocol{
     }
     
     private func setupButtonTitles() {
+        let buttonTitles = ["Todos", "Figura de Accion", "Clothes", "Manga", "Categoría 4"]
         for (index, label) in labelCollectionCategories.enumerated() where index < buttonCategories.count {
-            label.text = ["Categoría 1", "Categoría 2", "Categoría 3", "Categoría 4"][index]
+            label.text = buttonTitles[index]
             label.font = UIFont(name: "Avenir-Light", size: 16) ?? UIFont.systemFont(ofSize: 16)
             buttonCategories[index].setButtonStyle(.gray)
         }
@@ -79,7 +78,12 @@ class HomeViewController: UIViewController, HomeViewProtocol{
     
     // MARK: - Actions
     @IBAction func buttonCategoryTapped(_ sender: UIButton) {
+        searchBar.text = ""
         updateButtonSelectionStates(for: sender)
+        if let index = buttonCategories.firstIndex(of: sender) {
+            let selectedCategory = labelCollectionCategories[index].text
+            presenter?.filterProducts(byCategory: selectedCategory)
+        }
     }
     
     func updateButtonSelectionStates(for selectedButton: UIButton) {
@@ -91,6 +95,7 @@ class HomeViewController: UIViewController, HomeViewProtocol{
     }
     func displayProducts(_ products: [Product]) {
         self.products = products
+        homeCollectionView.collectionViewLayout.invalidateLayout() // Asegura que el layout se actualice
         homeCollectionView.reloadData()
     }
     
@@ -113,14 +118,30 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        CGSize(width: view.frame.width * 0.4, height: view.frame.width * 0.5)
-//        CGSize(width: collectionView.frame.width * 0.5, height: view.frame.width * 0.5)
         return CGSize(width: (view.frame.width - 50) * 0.5, height: (view.frame.width) * 0.57)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedProduct = products[indexPath.row]
         presenter?.goToDetail(with: selectedProduct)
+    }
+}
+
+// MARK: - UISearchBar Delegate
+extension HomeViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Reinicia la selección de categorías a "ALL"
+        if let allButton = buttonCategories.first(where: { labelCollectionCategories[buttonCategories.firstIndex(of: $0)!].text == "ALL" }) {
+            updateButtonSelectionStates(for: allButton)
+        }
+        
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(filterContentForSearchText(_:)), object: searchBar)
+        perform(#selector(filterContentForSearchText(_:)), with: searchBar, afterDelay: 0.5)
+    }
+    
+    @objc private func filterContentForSearchText(_ searchBar: UISearchBar) {
+        let searchText = searchBar.text ?? ""
+        presenter?.filterProducts(bySearchText: searchText)
     }
 }
 

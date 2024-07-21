@@ -21,10 +21,10 @@
                         <rect key="frame" x="10" y="10" width="136" height="189"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3R-UK-Hjh">
-                                <rect key="frame" x="15" y="15" width="106" height="106"/>
+                                <rect key="frame" x="18" y="15" width="100" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toroo" translatesAutoresizingMaskIntoConstraints="NO" id="dMb-fL-8Nu">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dMb-fL-8Nu" secondAttribute="height" multiplier="1:1" id="THQ-ps-Mca"/>
                                         </constraints>
@@ -33,13 +33,15 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="dMb-fL-8Nu" secondAttribute="bottom" id="FUI-oE-CTF"/>
+                                    <constraint firstAttribute="width" constant="100" id="O2K-zK-6kD"/>
+                                    <constraint firstAttribute="height" constant="100" id="eXn-Ge-n8b"/>
                                     <constraint firstItem="dMb-fL-8Nu" firstAttribute="leading" secondItem="A3R-UK-Hjh" secondAttribute="leading" id="nAY-MV-vxX"/>
                                     <constraint firstAttribute="trailing" secondItem="dMb-fL-8Nu" secondAttribute="trailing" id="nI2-6s-lCe"/>
                                     <constraint firstItem="dMb-fL-8Nu" firstAttribute="top" secondItem="A3R-UK-Hjh" secondAttribute="top" id="oXO-Xv-oC0"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HlJ-Cm-1Os">
-                                <rect key="frame" x="15.000000000000004" y="131" width="41.333333333333343" height="40"/>
+                                <rect key="frame" x="18.000000000000004" y="125" width="41.333333333333343" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtH-mx-ol5">
                                         <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20"/>
@@ -64,9 +66,8 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="A3R-UK-Hjh" secondAttribute="trailing" constant="15" id="IjK-Ye-mRN"/>
+                            <constraint firstItem="A3R-UK-Hjh" firstAttribute="centerX" secondItem="LQD-nE-VZK" secondAttribute="centerX" id="AT4-Fr-tjy"/>
                             <constraint firstItem="HlJ-Cm-1Os" firstAttribute="leading" secondItem="A3R-UK-Hjh" secondAttribute="leading" id="Klv-q7-vat"/>
-                            <constraint firstItem="A3R-UK-Hjh" firstAttribute="leading" secondItem="LQD-nE-VZK" secondAttribute="leading" constant="15" id="POO-Ho-5Vg"/>
                             <constraint firstItem="A3R-UK-Hjh" firstAttribute="top" secondItem="LQD-nE-VZK" secondAttribute="top" constant="15" id="y5z-Z5-tp2"/>
                             <constraint firstItem="HlJ-Cm-1Os" firstAttribute="top" secondItem="A3R-UK-Hjh" secondAttribute="bottom" constant="10" id="zTM-Gh-Ei5"/>
                         </constraints>

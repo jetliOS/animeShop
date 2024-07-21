@@ -42,7 +42,6 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configurator.configure(viewcontroller: self)
         setupUI()
         configureCartButton()
         presenter?.loadProductDetails()

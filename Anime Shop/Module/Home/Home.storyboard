@@ -57,14 +57,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oib-bs-h5f">
                                         <rect key="frame" x="20" y="0.0" width="541" height="40"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="U84-6v-fw9">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="U84-6v-fw9">
                                                 <rect key="frame" x="0.0" y="0.0" width="541" height="40"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQF-EF-g4H">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="100.33333333333333" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmJ-gj-52w">
-                                                                <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="100.33333333333333" height="40"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                                 <connections>
@@ -72,7 +72,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2t-ms-EB6">
-                                                                <rect key="frame" x="10" y="9.9999999999999982" width="100.33333333333333" height="20.333333333333329"/>
+                                                                <rect key="frame" x="10" y="9.9999999999999982" width="80.333333333333329" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -91,10 +91,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2D-KP-MGu">
-                                                        <rect key="frame" x="140.33333333333334" y="0.0" width="120.33333333333334" height="40"/>
+                                                        <rect key="frame" x="110.33333333333334" y="0.0" width="100" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpn-cY-Woz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                                 <connections>
@@ -102,7 +102,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3k-m7-X24">
-                                                                <rect key="frame" x="10" y="9.9999999999999982" width="100.33333333333333" height="20.333333333333329"/>
+                                                                <rect key="frame" x="10" y="9.9999999999999982" width="80" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -121,10 +121,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNv-WB-F5t">
-                                                        <rect key="frame" x="280.66666666666669" y="0.0" width="120" height="40"/>
+                                                        <rect key="frame" x="220.33333333333334" y="0.0" width="100.33333333333334" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TM-9a-cqh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="100.33333333333333" height="40"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                                 <connections>
@@ -132,7 +132,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t17-1a-YFg">
-                                                                <rect key="frame" x="10" y="9.9999999999999982" width="100" height="20.333333333333329"/>
+                                                                <rect key="frame" x="10" y="9.9999999999999982" width="80.333333333333329" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -151,10 +151,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9a-1e-GT3">
-                                                        <rect key="frame" x="420.66666666666669" y="0.0" width="120.33333333333331" height="40"/>
+                                                        <rect key="frame" x="330.66666666666669" y="0.0" width="100" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMe-jy-g4r">
-                                                                <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                                 <connections>
@@ -162,7 +162,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFk-MY-C00">
-                                                                <rect key="frame" x="10" y="9.9999999999999982" width="100.33333333333333" height="20.333333333333329"/>
+                                                                <rect key="frame" x="10" y="9.9999999999999982" width="80" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -178,6 +178,36 @@
                                                             <constraint firstAttribute="bottom" secondItem="ZMe-jy-g4r" secondAttribute="bottom" id="nJX-qT-Rxh"/>
                                                             <constraint firstItem="ZFk-MY-C00" firstAttribute="leading" secondItem="s9a-1e-GT3" secondAttribute="leading" constant="10" id="pDI-GK-06f"/>
                                                             <constraint firstItem="ZMe-jy-g4r" firstAttribute="top" secondItem="s9a-1e-GT3" secondAttribute="top" id="qAB-td-uAX"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-Zh-bSN">
+                                                        <rect key="frame" x="440.66666666666669" y="0.0" width="100.33333333333331" height="40"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EK7-si-XGc">
+                                                                <rect key="frame" x="0.0" y="0.0" width="100.33333333333333" height="40"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                                <connections>
+                                                                    <action selector="buttonCategoryTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5we-U4-xha"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQn-hL-3MC">
+                                                                <rect key="frame" x="10" y="9.9999999999999982" width="80.333333333333329" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="EK7-si-XGc" secondAttribute="bottom" id="9FA-Jk-43i"/>
+                                                            <constraint firstItem="ZQn-hL-3MC" firstAttribute="centerY" secondItem="qZr-Zh-bSN" secondAttribute="centerY" id="ZIU-60-YFP"/>
+                                                            <constraint firstItem="EK7-si-XGc" firstAttribute="leading" secondItem="qZr-Zh-bSN" secondAttribute="leading" id="aAU-JS-tUl"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ZQn-hL-3MC" secondAttribute="trailing" constant="10" id="afX-bQ-wuD"/>
+                                                            <constraint firstItem="ZQn-hL-3MC" firstAttribute="centerX" secondItem="qZr-Zh-bSN" secondAttribute="centerX" id="bGg-Yv-vBI"/>
+                                                            <constraint firstItem="ZQn-hL-3MC" firstAttribute="leading" secondItem="qZr-Zh-bSN" secondAttribute="leading" constant="10" id="dXt-P6-lmh"/>
+                                                            <constraint firstItem="EK7-si-XGc" firstAttribute="top" secondItem="qZr-Zh-bSN" secondAttribute="top" id="fca-le-hj9"/>
+                                                            <constraint firstAttribute="trailing" secondItem="EK7-si-XGc" secondAttribute="trailing" id="lHc-g0-srx"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -250,6 +280,8 @@
                         <outletCollection property="labelCollectionCategories" destination="D3k-m7-X24" collectionClass="NSMutableArray" id="5rh-7N-X1S"/>
                         <outletCollection property="labelCollectionCategories" destination="t17-1a-YFg" collectionClass="NSMutableArray" id="WZx-hL-rY0"/>
                         <outletCollection property="labelCollectionCategories" destination="ZFk-MY-C00" collectionClass="NSMutableArray" id="Q11-aX-LaF"/>
+                        <outletCollection property="buttonCategories" destination="EK7-si-XGc" collectionClass="NSMutableArray" id="nsS-3k-mz8"/>
+                        <outletCollection property="labelCollectionCategories" destination="ZQn-hL-3MC" collectionClass="NSMutableArray" id="oNC-wd-4PD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
