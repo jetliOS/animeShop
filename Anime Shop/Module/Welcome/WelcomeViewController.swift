@@ -11,7 +11,9 @@ class WelcomeViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var imageWelcome: UIImageView!
-    @IBOutlet weak var labelWelcome: UILabel!
+    @IBOutlet weak var labelWelcome: UILabel! { didSet {
+            labelWelcome.attributedText = TextManager.shared.attributedWelcomeText()
+    }}
     @IBOutlet weak var loginButton: UIButton! {
         didSet{
             loginButton.configureButton(
@@ -42,12 +44,14 @@ class WelcomeViewController: UIViewController {
             )
         }
     }
+    // MARK: - Properties
+    var router: WelcomeRouterProtocol!
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInitialTransforms()
-        setupLabel()
+        router = WelcomeRouter(viewController: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,20 +61,18 @@ class WelcomeViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func loginTapped(_ sender: Any) {
-        goToLoginView()
+        router.navigateToLogin()
     }
     
     @IBAction func registerTapped(_ sender: Any) {
-        goToRegisterView()
+        router.navigateToRegister()
     }
     
     @IBAction func omitirTapped(_ sender: Any) {
-        presentHomeViewController()
+        router.navigateToHome()
     }
     // MARK: - Setup Methods
-    private func setupLabel() {
-        labelWelcome.attributedText = TextManager.shared.attributedWelcomeText()
-    }
+    
     
     private func setupInitialTransforms() {
         imageWelcome.transform = CGAffineTransform(translationX: -self.view.bounds.width, y: 0)
@@ -83,30 +85,6 @@ class WelcomeViewController: UIViewController {
             self.imageWelcome.transform = .identity
             self.labelWelcome.transform = .identity
         }
-    }
-    
-    // MARK: - ROUTER Navigate options
-    private func presentHomeViewController() {
-//        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-//        if let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
-        let storyBoard = UIStoryboard(name: "TabBar", bundle: nil)
-        let didTapSnackBarAlert = storyBoard.instantiateViewController(withIdentifier: "CustomTabBarController") as? CustomTabBarController
-
-        self.navigationController?.pushViewController(didTapSnackBarAlert!, animated: true)
-    }
-    
-    func goToLoginView() {
-        let storyBoard = UIStoryboard(name: "Login", bundle: nil)
-        let didTapSnackBarAlert = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
-        self.navigationController?.pushViewController(didTapSnackBarAlert!, animated: true)
-    }
-    
-    func goToRegisterView() {
-        let storyBoard = UIStoryboard(name: "Register", bundle: nil)
-        let didTapSnackBarAlert = storyBoard.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController
-        self.navigationController?.pushViewController(didTapSnackBarAlert!, animated: true)
     }
 }
 

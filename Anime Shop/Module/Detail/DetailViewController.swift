@@ -18,14 +18,33 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     @IBOutlet weak var containerView2: UIView!
     @IBOutlet weak var containerBar: UIView!
     @IBOutlet weak var imageDetail: UIImageView!
-    @IBOutlet weak var titleDetail: UILabel!
-    @IBOutlet weak var priceDetail: UILabel!
-    @IBOutlet weak var titleDescriptionDetail: UILabel!
-    @IBOutlet weak var labelCategory: UILabel!
-    @IBOutlet weak var descriptionDetail: UILabel!
-    @IBOutlet weak var totalLabel: UILabel!
-    @IBOutlet weak var totalPriceLabel: UILabel!
-    @IBOutlet weak var barTitle: UILabel!
+    @IBOutlet weak var titleDetail: UILabel! { didSet {
+        titleDetail.applyStyle(.titleSmall)
+    }}
+    @IBOutlet weak var priceDetail: UILabel! { didSet {
+        priceDetail.applyStyle(.subtitle)
+    }}
+    @IBOutlet weak var titleDescriptionDetail: UILabel! { didSet {
+        titleDescriptionDetail.applyStyle(.titleSmall)
+        titleDescriptionDetail.text = TextManager.shared.descriptionTitle
+    }}
+    @IBOutlet weak var labelCategory: UILabel! { didSet {
+        labelCategory.applyStyle(.body)
+    }}
+    @IBOutlet weak var descriptionDetail: UILabel! { didSet {
+        descriptionDetail.applyStyle(.body)
+    }}
+    @IBOutlet weak var totalLabel: UILabel! { didSet {
+        totalLabel.text = TextManager.shared.totalText
+        totalLabel.applyStyle(.body)
+    }}
+    @IBOutlet weak var totalPriceLabel: UILabel! { didSet {
+        totalPriceLabel.applyStyle(.body)
+    }}
+    @IBOutlet weak var barTitle: UILabel! { didSet{
+        barTitle.text = TextManager.shared.productDetailsTitle
+        barTitle.applyStyle(.subtitle)
+    }}
     @IBOutlet weak var containerStepper: UIView!
     @IBOutlet weak var labelUnity: UILabel!
     @IBOutlet weak var minusButton: UIButton!
@@ -61,7 +80,6 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     // MARK: - UI Setup
     private func setupUI() {
         configureContainerViews()
-        configureLabels()
         setupButtons()
         configureDescriptionDetail()
     }
@@ -124,8 +142,8 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     
     @IBAction func addCartBtnTapped(_ sender: Any) {
         presenter?.addProductToCart(quantity: digitData)
-            isItemSelected.toggle()
-            configureCartButton()
+        isItemSelected.toggle()
+        configureCartButton()
     }
     
     @IBAction func backAction(_ sender: Any) {
@@ -149,33 +167,6 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         descriptionDetail.textAlignment = .justified
     }
     
-    private func configureLabels() {
-        barTitle.text = "Detalles de producto"
-        barTitle.applyStyle(.subtitle)
-        
-        titleDetail.applyStyle(.title)
-        titleDetail.textColor = UIColor(hex: "#374259")
-        
-        priceDetail.applyStyle(.subtitle)
-        priceDetail.textColor = UIColor(hex: "#374259")
-        
-        titleDescriptionDetail.applyStyle(.title)
-        titleDescriptionDetail.text = "Descripción"
-        titleDescriptionDetail.textColor = UIColor(hex: "#374259")
-        
-        labelCategory.applyStyle(.body)
-        
-        descriptionDetail.applyStyle(.body)
-        descriptionDetail.textColor = UIColor(hex: "#374259")
-        
-        totalPriceLabel.applyStyle(.body)
-        totalPriceLabel.textColor = UIColor(hex: "#374259")
-        
-        totalLabel.text = "TOTAL"
-        totalLabel.applyStyle(.body)
-        totalLabel.textColor = UIColor(hex: "#374259")
-    }
-    
     private func configureContainerViews() {
         containerView2.layer.cornerRadius = 30
         containerStepper.layer.cornerRadius = containerStepper.frame.size.height / 2
@@ -183,8 +174,7 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     
     private func configureCartButton() {
         addCartBtn.setButtonStyle(isItemSelected ? .gradient : .gray)
-        labelButton.text = "Añadir al carrito"
-        labelButton.text = isItemSelected ? "Añadido al carrito" : "Añadir al carrito"
+        labelButton.text = isItemSelected ? TextManager.shared.addedToCartButtonTitle : TextManager.shared.addToCartButtonTitle
         labelButton.applyStyle(.subtitle)
     }
 }

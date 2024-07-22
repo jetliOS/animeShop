@@ -14,8 +14,13 @@ protocol HomeViewProtocol: AnyObject {
 class HomeViewController: UIViewController, HomeViewProtocol {
     
     // MARK: - Outlets
-    @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var labelCategories: UILabel!
+    @IBOutlet weak var labelTitle: UILabel! { didSet {
+        labelTitle.attributedText = TextManager.shared.attributedWelcomeText()
+}}
+    @IBOutlet weak var labelCategories: UILabel! { didSet {
+        labelCategories.text = TextManager.shared.categoriesLabelText
+        labelCategories.applyStyle(.body)
+    }}
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var buttonCategories: [UIButton]!
     @IBOutlet var labelCollectionCategories: [UILabel]!
@@ -43,7 +48,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     // MARK: - Setup Methods
     private func setupUI() {
         setupButtonTitles()
-        setupLabels()
+
         setupSearchBar()
         presenter?.fetchProducts()
     }
@@ -62,12 +67,6 @@ class HomeViewController: UIViewController, HomeViewProtocol {
             label.font = UIFont(name: "Avenir-Light", size: 16) ?? UIFont.systemFont(ofSize: 16)
             buttonCategories[index].setButtonStyle(.gray)
         }
-    }
-    
-    private func setupLabels() {
-        labelTitle.attributedText = TextManager.shared.attributedWelcomeText()
-        labelCategories.text = TextManager.shared.categoriesLabelText
-        labelCategories.applyStyle(.body)
     }
     
     private func setupSearchBar() {

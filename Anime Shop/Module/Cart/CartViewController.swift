@@ -12,31 +12,26 @@ class CartViewController: UIViewController {
     @IBOutlet weak var labelTitle: UILabel! { didSet {
         labelTitle.text = TextManager.shared.cartTitleText
         labelTitle.applyStyle(.title)
-    }
-    }
+    }}
     @IBOutlet weak var labelText: UILabel! { didSet {
         labelText.text = TextManager.shared.cartSubtitleText
         labelText.applyStyle(.body)
-    }
-    }
+    }}
     @IBOutlet weak var priceLabel: UILabel! { didSet {
         priceLabel.text = TextManager.shared.totalText
         priceLabel.applyStyle(.body)
-    }
-    }
+    }}
     @IBOutlet weak var totalLabel: UILabel! { didSet {
         totalLabel.text = TextManager.shared.totalText
         totalLabel.applyStyle(.body)
-    }
-    }
+    }}
     @IBOutlet weak var checkoutBtn: UIButton! { didSet {
         checkoutBtn.configureButton(
             title: TextManager.shared.checkoutButtonTitle,
             titleFont: TextManager.shared.buttonTitleFont,
             titleColor: .white,
             gradientColors: TextManager.shared.registerButtonGradientColors)
-    }
-    }
+    }}
     @IBOutlet weak var tableView: UITableView!
     
     

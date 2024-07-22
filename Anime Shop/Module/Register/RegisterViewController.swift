@@ -14,14 +14,27 @@ protocol RegisterViewControllerProtocol: AnyObject {}
 class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
     
     // MARK: - Outlets
+    @IBOutlet weak var labelTitle: UILabel! { didSet {
+        labelTitle.text = TextManager.shared.createAccount
+        labelTitle.applyStyle(.title)
+    }}
+    
+    @IBOutlet weak var loginAcces: UIButton! { didSet {
+                loginAcces.setTitle(TextManager.shared.signIn, for: .normal)
+    }}
     @IBOutlet weak var fieldView: UIView!
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var logo2: UIImageView!
     @IBOutlet weak var userRegisterText: UITextField!
     @IBOutlet weak var passwordRegisterText: UITextField!
     @IBOutlet weak var registerButton: UIButton!
-    @IBOutlet weak var appleButton: UIButton!
-    @IBOutlet weak var googleButton: UIButton!
+    @IBOutlet weak var appleButton: UIButton! { didSet {
+        appleButton.setupAppleButton()
+        appleButton.setupAppleButton()
+    }}
+    @IBOutlet weak var googleButton: UIButton! { didSet {
+        googleButton.setupGoogleButton()
+    }}
     
     var presenter: RegisterViewPresenterProtocol!
     let configurator = RegisterViewConfigurator()
@@ -45,7 +58,7 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
         logo2.startLevitating()
     }
     
-        // MARK: - Actions
+    // MARK: - Actions
     @IBAction func loginAccesButton(_ sender: Any) {
         presenter.goToLogin()
     }
@@ -61,8 +74,6 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
     private func setUpUI() {
         configureFieldView()
         configureBackButton()
-        appleButton.setupAppleButton()
-        googleButton.setupGoogleButton()
         userRegisterText.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
         passwordRegisterText.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
         updateRegisterButtonState()
@@ -81,10 +92,9 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
         let isPasswordValid = isValidPassword(passwordRegisterText.text)
         
         let style = (isEmailValid && isPasswordValid) ? ButtonStyle.gradient : ButtonStyle.gray
-        registerButton.configure(title: "Iniciar sesión", titleFont: .systemFont(ofSize: 18, weight: .bold), titleColor: .white, style: style, isEnabled: isEmailValid && isPasswordValid)
+        registerButton.configure(title: TextManager.shared.loginButtonTitle, titleFont: .systemFont(ofSize: 18, weight: .bold), titleColor: .white, style: style, isEnabled: isEmailValid && isPasswordValid)
         
     }
-    
     
     private func isValidEmail(_ email: String?) -> Bool {
         guard let email = email else { return false }

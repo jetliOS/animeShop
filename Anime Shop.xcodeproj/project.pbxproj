@@ -41,6 +41,7 @@
 		FD86173D2C4DA54E00ACE181 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD86173C2C4DA54E00ACE181 /* Profile.storyboard */; };
 		FD8617402C4DA8A200ACE181 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86173F2C4DA8A200ACE181 /* FavoriteViewController.swift */; };
 		FD8617462C4DC44B00ACE181 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8617452C4DC44B00ACE181 /* CartManager.swift */; };
+		FD8617482C4DE11400ACE181 /* WelcomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8617472C4DE11400ACE181 /* WelcomeViewRouter.swift */; };
 		FD8795D42C4BFD9D008DE383 /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D32C4BFD9D008DE383 /* HomeViewPresenter.swift */; };
 		FD8795D62C4BFDB0008DE383 /* HomeViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D52C4BFDB0008DE383 /* HomeViewConfigurator.swift */; };
 		FD8795D82C4BFDC1008DE383 /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8795D72C4BFDC1008DE383 /* HomeViewRouter.swift */; };
@@ -93,6 +94,7 @@
 		FD86173C2C4DA54E00ACE181 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		FD86173F2C4DA8A200ACE181 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		FD8617452C4DC44B00ACE181 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		FD8617472C4DE11400ACE181 /* WelcomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewRouter.swift; sourceTree = "<group>"; };
 		FD8795D32C4BFD9D008DE383 /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
 		FD8795D52C4BFDB0008DE383 /* HomeViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewConfigurator.swift; sourceTree = "<group>"; };
 		FD8795D72C4BFDC1008DE383 /* HomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			children = (
 				FD9E496A2C4B623E00906862 /* Welcome.storyboard */,
 				FD9E49682C4B623E00906862 /* WelcomeViewController.swift */,
+				FD8617472C4DE11400ACE181 /* WelcomeViewRouter.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD8617482C4DE11400ACE181 /* WelcomeViewRouter.swift in Sources */,
 				FD86173B2C4DA53F00ACE181 /* ProfileViewController.swift in Sources */,
 				FD0A579B2C4CE00300D543FA /* LoginViewController.swift in Sources */,
 				FD0A57A42C4CE04F00D543FA /* RegisterViewController.swift in Sources */,

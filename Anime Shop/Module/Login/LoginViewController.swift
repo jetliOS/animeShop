@@ -13,6 +13,13 @@ protocol LoginViewProtocol: AnyObject {}
 class LoginViewController: UIViewController, LoginViewProtocol {
     
     // MARK: - Outlets
+    @IBOutlet weak var welcomeLabel: UILabel! { didSet {
+        welcomeLabel.text = TextManager.shared.loginWelcomeLabelText
+        welcomeLabel.applyStyle(.title)
+    }}
+    @IBOutlet weak var registerButton: UIButton! { didSet {
+        registerButton.setTitle(TextManager.shared.signUp, for: .normal)
+    }}
     @IBOutlet weak var logo1: UIImageView!
     @IBOutlet weak var passwordVisibilityButton: UIButton!
     @IBOutlet var backgroundView: UIView!
@@ -20,9 +27,12 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     @IBOutlet weak var userLoginText: UITextField!
     @IBOutlet weak var passwordLoginText: UITextField!
     @IBOutlet weak var buttonLogin: UIButton!
-    @IBOutlet weak var loginApple: UIButton!
-    @IBOutlet weak var loginGoogle: UIButton!
-    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var loginApple: UIButton! { didSet {
+        loginApple.setupAppleButton()
+    }}
+    @IBOutlet weak var loginGoogle: UIButton! { didSet {
+        loginGoogle.setupGoogleButton()
+    }}
     
     var presenter: LoginViewPresenterProtocol?
     let configurator = LoginViewConfigurator()
@@ -31,7 +41,6 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         super.viewDidLoad()
         configurator.configure(viewcontroller: self)
         setupLogin()
-        setLabelTitle()
         configureTextFields()
         updateLoginButtonState()
     }
@@ -54,10 +63,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         presenter?.login(email: userLoginText.text, password: passwordLoginText.text)
     }
     
-    private func setLabelTitle() {
-        welcomeLabel.text = TextManager.shared.loginWelcomeLabelText
-        welcomeLabel.applyStyle(.title)
-    }
+
     
     private func configureTextFields() {
         userLoginText.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
@@ -90,8 +96,6 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         fieldView.layer.cornerRadius = 20
         setupPasswordVisibilityButton()
         configureBackButton()
-        loginApple.setupAppleButton()
-        loginGoogle.setupGoogleButton()
     }
     
     private func startLevitating() {

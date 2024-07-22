@@ -15,6 +15,10 @@ class TextManager {
     let registerButtonTitle = "Registrarse"
     let skipButtonTitle = "Omitir"
     let checkoutButtonTitle = "Checkout"
+    let addToCartButtonTitle = "Añadir al carrito"
+    let addedToCartButtonTitle = "Añadido al carrito"
+    let signIn = "¡Accede!"
+    let signUp = "¡Registrate!"
 
     // Colores
     let loginButtonGradientColors = [UIColor(hex: "#E2BAF1").cgColor, UIColor(hex: "#9198ff").cgColor]
@@ -34,7 +38,13 @@ class TextManager {
     let cartSubtitleText = "Encuentra tus productos favoritos"
     let subtotalText = "Subtotal"
     let totalText = "TOTAL"
-
+    let productDetailsTitle = "Detalles de producto"
+    let descriptionTitle = "Descripción"
+    let categoryLabelText = "Categoría:"
+    let createAccount = "Crea tu cuenta"
+    let yaTienesCuenta = "¿Ya tienes cuenta?"
+    let aunNoTienesCuenta = "¿Aún no tienes cuenta?"
+    
     // Categorías
     let categoryButtonTitles = ["Todos", "Figura de Accion", "Ropa", "Peluches", "Accesorios"]
 

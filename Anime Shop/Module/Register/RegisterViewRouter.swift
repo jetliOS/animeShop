@@ -23,7 +23,6 @@ class RegisterViewRouter: RegisterViewRouterProtocol {
         self.currentController = view
     }
     
-     
     func routerGoToHomeBar() {
         print("registrado")
         let storyBoard = UIStoryboard(name: "Home", bundle: nil)
