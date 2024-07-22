@@ -86,8 +86,8 @@
                         <outlet property="imageWelcome" destination="TVh-O3-a9J" id="4VX-c6-qJu"/>
                         <outlet property="labelWelcome" destination="oEM-e9-Pcz" id="Y3G-hf-ctq"/>
                         <outlet property="loginButton" destination="YH8-7Y-zaB" id="q0S-HH-lYj"/>
-                        <outlet property="omitirButton" destination="4ht-cx-4SO" id="GNi-vb-XkK"/>
                         <outlet property="registerButton" destination="Rq4-z5-PpL" id="Apu-dV-VQJ"/>
+                        <outlet property="skipButton" destination="4ht-cx-4SO" id="GNi-vb-XkK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

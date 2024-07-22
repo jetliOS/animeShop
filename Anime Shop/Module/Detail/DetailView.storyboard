@@ -18,25 +18,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLN-ev-iVa" userLabel="Content1">
-                                <rect key="frame" x="0.0" y="119" width="393" height="270"/>
+                                <rect key="frame" x="0.0" y="119" width="393" height="230"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toroo" translatesAutoresizingMaskIntoConstraints="NO" id="Ls0-Af-Aqk">
-                                        <rect key="frame" x="81.666666666666686" y="-10" width="230" height="230"/>
+                                        <rect key="frame" x="96.666666666666686" y="-15" width="200" height="200"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="230" id="Qre-89-edP"/>
-                                            <constraint firstAttribute="width" constant="230" id="XAk-rb-71K"/>
+                                            <constraint firstAttribute="height" constant="200" id="Qre-89-edP"/>
+                                            <constraint firstAttribute="width" constant="200" id="XAk-rb-71K"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.83137254901960778" green="0.82745098039215681" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Ls0-Af-Aqk" firstAttribute="centerY" secondItem="FLN-ev-iVa" secondAttribute="centerY" constant="-30" id="4Wb-OO-D9j"/>
-                                    <constraint firstAttribute="height" constant="270" id="Ho3-Bl-ogf"/>
+                                    <constraint firstAttribute="height" constant="230" id="Ho3-Bl-ogf"/>
                                     <constraint firstItem="Ls0-Af-Aqk" firstAttribute="centerX" secondItem="FLN-ev-iVa" secondAttribute="centerX" id="Ifu-ca-Fbr"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPJ-iB-zQv" userLabel="Content2">
-                                <rect key="frame" x="0.0" y="359" width="393" height="493"/>
+                                <rect key="frame" x="0.0" y="319" width="393" height="533"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="0ar-d1-8UK">
                                         <rect key="frame" x="30" y="20" width="333" height="50"/>
@@ -70,7 +70,7 @@
                                         </constraints>
                                     </stackView>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnW-HJ-ADP">
-                                        <rect key="frame" x="20" y="105.3333333333333" width="353" height="191.66666666666663"/>
+                                        <rect key="frame" x="20" y="105.3333333333333" width="353" height="231.66666666666663"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="by2-fT-1th">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="40.333333333333336"/>
@@ -102,7 +102,7 @@
                                         <viewLayoutGuide key="frameLayoutGuide" id="hQC-3E-5H6"/>
                                     </scrollView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Puw-IA-d26">
-                                        <rect key="frame" x="30" y="408" width="333" height="45"/>
+                                        <rect key="frame" x="30" y="448" width="333" height="45"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObS-y7-zFL">
                                                 <rect key="frame" x="0.0" y="0.0" width="333" height="45"/>
@@ -144,7 +144,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rvr-Cu-ICq">
-                                        <rect key="frame" x="30" y="338" width="333" height="50"/>
+                                        <rect key="frame" x="30" y="378" width="333" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOz-ZG-kve">
                                                 <rect key="frame" x="0.0" y="9.6666666666666288" width="85" height="31"/>
@@ -223,7 +223,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvb-gL-bFh">
-                                        <rect key="frame" x="0.0" y="327" width="393" height="1"/>
+                                        <rect key="frame" x="0.0" y="367" width="393" height="1"/>
                                         <color key="backgroundColor" red="0.2156862745" green="0.25882352939999997" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="92p-Gb-pl5"/>

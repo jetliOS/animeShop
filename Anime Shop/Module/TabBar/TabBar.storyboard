@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom Tab Bar Controller-->
+        <scene sceneID="gSt-ZQ-2AN">
+            <objects>
+                <viewController storyboardIdentifier="CustomTabBarController" id="8M5-8E-dKP" customClass="CustomTabBarController" customModule="Anime_Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XON-aN-aPm">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Skc-0f-CRT">
+                                <rect key="frame" x="16" y="758" width="361" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ssi-kb-l6M">
+                                        <rect key="frame" x="20" y="0.0" width="321" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bc2-2W-qRM">
+                                                <rect key="frame" x="0.0" y="19" width="114" height="22"/>
+                                                <color key="tintColor" red="0.36111195540000002" green="0.43572489199999997" blue="0.74066131700000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="house.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="tabChangedWithSender:" destination="8M5-8E-dKP" eventType="touchUpInside" id="JTL-8K-fK1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbC-GU-DCz">
+                                                <rect key="frame" x="114" y="19" width="98" height="22"/>
+                                                <color key="tintColor" red="0.36111195540000002" green="0.43572489199999997" blue="0.74066131700000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="heart" catalog="system"/>
+                                                <connections>
+                                                    <action selector="tabChangedWithSender:" destination="8M5-8E-dKP" eventType="touchUpInside" id="Jft-Vc-4Ha"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgP-Uh-wfo">
+                                                <rect key="frame" x="212" y="19" width="109" height="22"/>
+                                                <color key="tintColor" red="0.36111195540000002" green="0.43572489199999997" blue="0.74066131700000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="cart" catalog="system"/>
+                                                <connections>
+                                                    <action selector="tabChangedWithSender:" destination="8M5-8E-dKP" eventType="touchUpInside" id="gKz-XX-N5D"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3JW-re-5aY" userLabel="height = 60"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ssi-kb-l6M" secondAttribute="bottom" id="6jB-PW-irz"/>
+                                    <constraint firstItem="Ssi-kb-l6M" firstAttribute="top" secondItem="Skc-0f-CRT" secondAttribute="top" id="Cp8-wu-wCl"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ssi-kb-l6M" secondAttribute="trailing" constant="20" id="I2w-oB-msv"/>
+                                    <constraint firstItem="Ssi-kb-l6M" firstAttribute="leading" secondItem="Skc-0f-CRT" secondAttribute="leading" constant="20" id="opf-Rz-76D"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1wf-iI-jmX"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Skc-0f-CRT" firstAttribute="leading" secondItem="1wf-iI-jmX" secondAttribute="leading" constant="16" id="KJa-YV-pcK"/>
+                            <constraint firstItem="1wf-iI-jmX" firstAttribute="trailing" secondItem="Skc-0f-CRT" secondAttribute="trailing" constant="16" id="iR1-Pn-rNr"/>
+                            <constraint firstItem="1wf-iI-jmX" firstAttribute="bottom" secondItem="Skc-0f-CRT" secondAttribute="bottom" id="j6Y-ct-m4W"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tabView" destination="Skc-0f-CRT" id="bqj-b3-Sjc"/>
+                        <outletCollection property="buttons" destination="bc2-2W-qRM" collectionClass="NSMutableArray" id="cV5-fL-CjO"/>
+                        <outletCollection property="buttons" destination="BbC-GU-DCz" collectionClass="NSMutableArray" id="4J9-wT-hsH"/>
+                        <outletCollection property="buttons" destination="DgP-Uh-wfo" collectionClass="NSMutableArray" id="XNq-Bw-6XH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F9Z-Cz-WrL" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-11.450381679389313" y="26.760563380281692"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+    </resources>
+</document>

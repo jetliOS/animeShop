@@ -9,7 +9,6 @@ import FirebaseFirestore
 
 protocol HomeViewProtocol: AnyObject {
     func displayProducts(_ products: [Product])
-    func displayError(_ message: String)
 }
 
 class HomeViewController: UIViewController, HomeViewProtocol {
@@ -57,7 +56,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     }
     
     private func setupButtonTitles() {
-        let buttonTitles = ["Todos", "Figura de Accion", "Ropa", "Peluches", "Accesorios"]
+        let buttonTitles = TextManager.shared.categoryButtonTitles
         for (index, label) in labelCollectionCategories.enumerated() where index < buttonCategories.count {
             label.text = buttonTitles[index]
             label.font = UIFont(name: "Avenir-Light", size: 16) ?? UIFont.systemFont(ofSize: 16)
@@ -66,9 +65,8 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     }
     
     private func setupLabels() {
-        labelTitle.text = "AnimeShop"
-        labelTitle.applyStyle(.title)
-        labelCategories.text = "Categorias"
+        labelTitle.attributedText = TextManager.shared.attributedWelcomeText()
+        labelCategories.text = TextManager.shared.categoriesLabelText
         labelCategories.applyStyle(.body)
     }
     
@@ -93,14 +91,11 @@ class HomeViewController: UIViewController, HomeViewProtocol {
             labelCollectionCategories[index].textColor = isSelected ? .black : .gray
         }
     }
+    
     func displayProducts(_ products: [Product]) {
         self.products = products
-        homeCollectionView.collectionViewLayout.invalidateLayout() // Asegura que el layout se actualice
+        homeCollectionView.collectionViewLayout.invalidateLayout()
         homeCollectionView.reloadData()
-    }
-    
-    func displayError(_ message: String) {
-        // Mostrar algún tipo de alerta o vista de error
     }
 }
 
@@ -155,6 +150,6 @@ extension UISearchBar {
         self.searchTextField.font = UIFont(name: "Avenir-Light", size: 16)
         self.searchTextField.textColor = .black
         self.searchTextField.backgroundColor = .white
-        self.searchTextField.attributedPlaceholder = NSAttributedString(string: "Buscar por nombre...", attributes: [.foregroundColor: UIColor(hex: "#04160F")])
+        self.searchTextField.attributedPlaceholder = NSAttributedString(string: TextManager.shared.searchBarPlaceholderText, attributes: [.foregroundColor: UIColor(hex: "#04160F")])
     }
 }

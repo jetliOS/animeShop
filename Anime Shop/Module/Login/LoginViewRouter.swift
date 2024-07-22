@@ -21,11 +21,9 @@ class LoginViewRouter: LoginViewRouterProtocol {
         self.currentController = view
     }
     func routerGoToHomeView() {
-        print("registrado")
         let storyBoard = UIStoryboard(name: "Home", bundle: nil)
         let didTapSnackBarAlert = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
         self.currentController?.navigationController?.pushViewController(didTapSnackBarAlert!, animated: true)
-        
     }
     
     func routerGoToRegisterView() {

@@ -55,7 +55,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     }
     
     private func setLabelTitle() {
-        welcomeLabel.text = "¡Bienvenido!"
+        welcomeLabel.text = TextManager.shared.loginWelcomeLabelText
         welcomeLabel.applyStyle(.title)
     }
     
@@ -69,12 +69,12 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     }
     
     private func updateLoginButtonState() {
-        let isEmailValid = isValidEmail(userLoginText.text)
-        let isPasswordValid = isValidPassword(passwordLoginText.text)
-        
-        let style = (isEmailValid && isPasswordValid) ? ButtonStyle.gradient : ButtonStyle.gray
-        buttonLogin.configure(title: "Iniciar sesión", titleFont: .systemFont(ofSize: 18, weight: .bold), titleColor: .white, style: style, isEnabled: isEmailValid && isPasswordValid)
-    }
+            let isEmailValid = isValidEmail(userLoginText.text)
+            let isPasswordValid = isValidPassword(passwordLoginText.text)
+            
+            let style = (isEmailValid && isPasswordValid) ? ButtonStyle.gradient : ButtonStyle.gray
+            buttonLogin.configure(title: TextManager.shared.loginButtonTitleText, titleFont: .systemFont(ofSize: 18, weight: .bold), titleColor: .white, style: style, isEnabled: isEmailValid && isPasswordValid)
+        }
     
     private func isValidEmail(_ email: String?) -> Bool {
         guard let email = email else { return false }

@@ -12,22 +12,49 @@ class WelcomeViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var imageWelcome: UIImageView!
     @IBOutlet weak var labelWelcome: UILabel!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var registerButton: UIButton!
-    @IBOutlet weak var omitirButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton! {
+        didSet{
+            loginButton.configureButton(
+                title: TextManager.shared.loginButtonTitle,
+                titleFont: TextManager.shared.buttonTitleFont,
+                titleColor: .white,
+                gradientColors: TextManager.shared.loginButtonGradientColors
+            )
+        }
+    }
+    @IBOutlet weak var registerButton: UIButton! {
+        didSet {
+            registerButton.configureButton(
+                title: TextManager.shared.registerButtonTitle,
+                titleFont: TextManager.shared.buttonTitleFont,
+                titleColor: .white,
+                gradientColors: TextManager.shared.registerButtonGradientColors
+            )
+        }
+    }
+    @IBOutlet weak var skipButton: UIButton! {
+        didSet {
+            skipButton.configureButton(
+                title: TextManager.shared.skipButtonTitle,
+                titleFont: TextManager.shared.buttonTitleFont,
+                titleColor: .white,
+                gradientColors: TextManager.shared.skipButtonGradientColors
+            )
+        }
+    }
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInitialTransforms()
         setupLabel()
-        delayPresentation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateElements()
     }
+    
     // MARK: - Actions
     @IBAction func loginTapped(_ sender: Any) {
         goToLoginView()
@@ -42,19 +69,7 @@ class WelcomeViewController: UIViewController {
     }
     // MARK: - Setup Methods
     private func setupLabel() {
-        let text = "AnimeShop"
-        let attributedString = NSMutableAttributedString(string: text)
-        
-        let commonFont = UIFont(name: "Avenir-Heavy", size: 24) ?? UIFont.boldSystemFont(ofSize: 24)
-        attributedString.addAttribute(.font, value: commonFont, range: NSRange(location: 0, length: text.count))
-        
-        let animeRange = (text as NSString).range(of: "Anime")
-        attributedString.addAttribute(.foregroundColor, value: UIColor(hex: "#535BE8"), range: animeRange)
-        
-        let shopRange = (text as NSString).range(of: "Shop")
-        attributedString.addAttribute(.foregroundColor, value: UIColor(hex: "#0E0E2E"), range: shopRange)
-        
-        labelWelcome.attributedText = attributedString
+        labelWelcome.attributedText = TextManager.shared.attributedWelcomeText()
     }
     
     private func setupInitialTransforms() {
@@ -70,23 +85,16 @@ class WelcomeViewController: UIViewController {
         }
     }
     
-    // MARK: - Navigation
-    private func delayPresentation() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            print("listo")
-//            self.presentHomeViewController()
-        }
-    }
-    
-    
-    
     // MARK: - ROUTER Navigate options
-    
     private func presentHomeViewController() {
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+//        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+//        if let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }
+        let storyBoard = UIStoryboard(name: "TabBar", bundle: nil)
+        let didTapSnackBarAlert = storyBoard.instantiateViewController(withIdentifier: "CustomTabBarController") as? CustomTabBarController
+
+        self.navigationController?.pushViewController(didTapSnackBarAlert!, animated: true)
     }
     
     func goToLoginView() {

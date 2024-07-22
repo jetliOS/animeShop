@@ -15,6 +15,7 @@ struct Product {
     var description: String
     var imageUrl: String
     var price: Double
+    var quantity: Int
 }
 
 // Extensión para inicializar desde un diccionario
@@ -34,5 +35,6 @@ extension Product {
         self.description = description
         self.imageUrl = imageUrl
         self.price = price
+        self.quantity = dictionary["quantity"] as? Int ?? 1 // Maneja cantidad predeterminada de 1 si no está en el diccionario
     }
 }

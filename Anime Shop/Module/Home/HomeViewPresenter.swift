@@ -35,7 +35,6 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
     func fetchProducts() {
             Firestore.firestore().collection("productos").getDocuments { snapshot, error in
                 guard let documents = snapshot?.documents else {
-                    self.view?.displayError("No documents found")
                     return
                 }
                 
