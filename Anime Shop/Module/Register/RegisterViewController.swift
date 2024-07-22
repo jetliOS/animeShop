@@ -19,14 +19,27 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
         labelTitle.applyStyle(.title)
     }}
     
-    @IBOutlet weak var loginAcces: UIButton! { didSet {
-                loginAcces.setTitle(TextManager.shared.signIn, for: .normal)
+    @IBOutlet weak var labelAnswer: UILabel! { didSet {
+        labelAnswer.applyStyle(.body)
     }}
-    @IBOutlet weak var fieldView: UIView!
-    @IBOutlet var backgroundView: UIView!
+    @IBOutlet weak var loginAcces: UIButton! { didSet {
+        loginAcces.setTitle(TextManager.shared.signIn, for: .normal)
+        loginAcces.applyStyle(.subtitle, backgroundColor: .clear)
+        loginAcces.setTitleColor(ColorManager.color.orange, for: .normal)
+    }}
+    @IBOutlet weak var fieldView: UIView! { didSet {
+        fieldView.backgroundColor = ColorManager.color.darkBackground
+    }}
+    @IBOutlet var backgroundView: UIView! { didSet {
+        backgroundView.backgroundColor = ColorManager.color.background
+    }}
     @IBOutlet weak var logo2: UIImageView!
-    @IBOutlet weak var userRegisterText: UITextField!
-    @IBOutlet weak var passwordRegisterText: UITextField!
+    @IBOutlet weak var userRegisterText: UITextField! { didSet {
+        userRegisterText.configure(placeholder: TextManager.shared.user, placeholderColor: .lightGray, textColor: .white)
+    }}
+    @IBOutlet weak var passwordRegisterText: UITextField! { didSet {
+        passwordRegisterText.configure(placeholder: TextManager.shared.user, placeholderColor: .lightGray, textColor: .white)
+    }}
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var appleButton: UIButton! { didSet {
         appleButton.setupAppleButton()
@@ -91,8 +104,8 @@ class RegisterViewController: UIViewController, RegisterViewControllerProtocol {
         let isEmailValid = isValidEmail(userRegisterText.text)
         let isPasswordValid = isValidPassword(passwordRegisterText.text)
         
-        let style = (isEmailValid && isPasswordValid) ? ButtonStyle.gradient : ButtonStyle.gray
-        registerButton.configure(title: TextManager.shared.loginButtonTitle, titleFont: .systemFont(ofSize: 18, weight: .bold), titleColor: .white, style: style, isEnabled: isEmailValid && isPasswordValid)
+        let style = (isEmailValid && isPasswordValid) ? ButtonStyle.orangeGradient : ButtonStyle.gray
+        registerButton.configure(title: TextManager.shared.loginButtonTitle, titleFont: TextManager.shared.buttonTitleFont, titleColor: .white, style: style, isEnabled: isEmailValid && isPasswordValid)
         
     }
     

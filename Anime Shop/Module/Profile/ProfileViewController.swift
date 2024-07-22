@@ -9,7 +9,10 @@ import UIKit
 
 class ProfileViewController: UIViewController{
  
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet var containerView: UIView!
+    @IBOutlet weak var imageView: UIImageView! { didSet {
+        containerView.backgroundColor = ColorManager.color.background
+    }}
     
     override func viewDidLoad() {
         super.viewDidLoad()

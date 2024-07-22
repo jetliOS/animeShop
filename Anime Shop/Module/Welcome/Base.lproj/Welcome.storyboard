@@ -11,11 +11,14 @@
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Anime_Shop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Anime_Shop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blurBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ZPx-IZ-iRo">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toroo" translatesAutoresizingMaskIntoConstraints="NO" id="TVh-O3-a9J">
                                 <rect key="frame" x="96.666666666666686" y="276" width="200" height="200"/>
                                 <constraints>
@@ -70,12 +73,16 @@
                             <constraint firstItem="oEM-e9-Pcz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2yA-Zg-sne"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rq4-z5-PpL" secondAttribute="trailing" constant="30" id="4s3-K8-0TX"/>
                             <constraint firstItem="4ht-cx-4SO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="5Zd-Yc-fKX"/>
+                            <constraint firstItem="ZPx-IZ-iRo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9CD-Q3-e5x"/>
                             <constraint firstItem="oEM-e9-Pcz" firstAttribute="top" secondItem="TVh-O3-a9J" secondAttribute="bottom" constant="20" id="Ahs-sQ-zyC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4ht-cx-4SO" secondAttribute="trailing" constant="30" id="Fj4-mx-YNc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YH8-7Y-zaB" secondAttribute="trailing" constant="30" id="HE6-IA-ydC"/>
+                            <constraint firstAttribute="bottom" secondItem="ZPx-IZ-iRo" secondAttribute="bottom" id="MvK-PB-KHr"/>
+                            <constraint firstItem="ZPx-IZ-iRo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MwT-wh-ElZ"/>
                             <constraint firstItem="4ht-cx-4SO" firstAttribute="top" secondItem="Rq4-z5-PpL" secondAttribute="bottom" constant="15" id="N7X-uw-AHw"/>
                             <constraint firstItem="Rq4-z5-PpL" firstAttribute="top" secondItem="YH8-7Y-zaB" secondAttribute="bottom" constant="10" id="OBF-wi-JJ1"/>
                             <constraint firstItem="TVh-O3-a9J" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="PbG-a3-k6D"/>
+                            <constraint firstItem="ZPx-IZ-iRo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZVT-RV-FBP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4ht-cx-4SO" secondAttribute="bottom" constant="30" id="axK-kS-xgI"/>
                             <constraint firstItem="Rq4-z5-PpL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="kbQ-xR-x92"/>
                             <constraint firstItem="YH8-7Y-zaB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="mwD-nl-PO8"/>
@@ -114,6 +121,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blurBackground" width="1720" height="3728"/>
         <image name="toroo" width="500" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

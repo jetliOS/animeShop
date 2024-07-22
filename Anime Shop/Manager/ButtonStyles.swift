@@ -13,18 +13,25 @@ struct ButtonStyle {
     var gradientColors: [CGColor]?
     var borderColor: UIColor
     var borderWidth: CGFloat
-
-    static let gradient = ButtonStyle(
+    
+    static let blueGradient = ButtonStyle(
         backgroundColor: .clear,
         gradientColors: [UIColor(hex: "E2BAF1").cgColor, UIColor(hex: "9198ff").cgColor],
         borderColor: .blue,
         borderWidth: 0
     )
-
+    
     static let gray = ButtonStyle(
-        backgroundColor: UIColor(hex: "EFEEF2"),
+        backgroundColor: UIColor(hex: "3B3A50"),
         gradientColors: nil,
         borderColor: .clear,
+        borderWidth: 0
+    )
+    
+    static let orangeGradient = ButtonStyle(
+        backgroundColor: .clear,
+        gradientColors: [ColorManager.color.orange.cgColor, ColorManager.color.lightOrange.cgColor],
+        borderColor: .blue,
         borderWidth: 0
     )
 }
@@ -34,15 +41,15 @@ import UIKit
 extension UIButton {
     
     func configure(title: String, titleFont: UIFont, titleColor: UIColor, style: ButtonStyle, isEnabled: Bool) {
-            self.isEnabled = isEnabled
-            self.setButtonStyle(style)
-            let attributedTitle = NSAttributedString(string: title, attributes: [
-                .font: titleFont,
-                .foregroundColor: titleColor
-            ])
-            self.setAttributedTitle(attributedTitle, for: .normal)
-            self.titleLabel?.font = titleFont
-        }
+        self.isEnabled = isEnabled
+        self.setButtonStyle(style)
+        let attributedTitle = NSAttributedString(string: title, attributes: [
+            .font: titleFont,
+            .foregroundColor: titleColor
+        ])
+        self.setAttributedTitle(attributedTitle, for: .normal)
+        self.titleLabel?.font = titleFont
+    }
     // Estilos de boton
     func setButtonStyle(_ style: ButtonStyle) {
         backgroundColor = style.backgroundColor
@@ -53,13 +60,13 @@ extension UIButton {
         
         // Elimina cualquier gradiente existente
         layer.sublayers?.filter { $0 is CAGradientLayer }.forEach { $0.removeFromSuperlayer() }
-
+        
         
         if let gradientColors = style.gradientColors {
             applyGradient(colors: gradientColors)
         }
     }
-
+    
     // Button gradiente
     func applyGradient(colors: [CGColor], startPoint: CGPoint = CGPoint(x: 0.5, y: 1), endPoint: CGPoint = CGPoint(x: 0.5, y: 0)) {
         let gradientLayer = CAGradientLayer()
@@ -83,7 +90,7 @@ extension UIButton {
             }
         }
     }
-
+    
     // Método genérico para configurar el botón con un título y colores de gradiente
     func configureButton(title: String, titleFont: UIFont, titleColor: UIColor, gradientColors: [CGColor]) {
         layer.cornerRadius = frame.height / 2
@@ -94,7 +101,7 @@ extension UIButton {
             .foregroundColor: titleColor
         ]), for: .normal)
     }
-
+    
     // Boton Apple
     func setupAppleButton() {
         configureButton(

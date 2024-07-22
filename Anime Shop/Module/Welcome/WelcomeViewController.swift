@@ -12,46 +12,42 @@ class WelcomeViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var imageWelcome: UIImageView!
     @IBOutlet weak var labelWelcome: UILabel! { didSet {
-            labelWelcome.attributedText = TextManager.shared.attributedWelcomeText()
+        labelWelcome.attributedText = TextManager.shared.attributedWelcomeText()
     }}
-    @IBOutlet weak var loginButton: UIButton! {
-        didSet{
-            loginButton.configureButton(
-                title: TextManager.shared.loginButtonTitle,
-                titleFont: TextManager.shared.buttonTitleFont,
-                titleColor: .white,
-                gradientColors: TextManager.shared.loginButtonGradientColors
-            )
-        }
-    }
-    @IBOutlet weak var registerButton: UIButton! {
-        didSet {
-            registerButton.configureButton(
-                title: TextManager.shared.registerButtonTitle,
-                titleFont: TextManager.shared.buttonTitleFont,
-                titleColor: .white,
-                gradientColors: TextManager.shared.registerButtonGradientColors
-            )
-        }
-    }
-    @IBOutlet weak var skipButton: UIButton! {
-        didSet {
-            skipButton.configureButton(
-                title: TextManager.shared.skipButtonTitle,
-                titleFont: TextManager.shared.buttonTitleFont,
-                titleColor: .white,
-                gradientColors: TextManager.shared.skipButtonGradientColors
-            )
-        }
-    }
+    @IBOutlet weak var loginButton: UIButton! { didSet {
+        loginButton.configureButton(
+            title: TextManager.shared.loginButtonTitle,
+            titleFont: TextManager.shared.buttonTitleFont,
+            titleColor: .white,
+            gradientColors: ColorManager.color.loginButtonGradientColors
+        )
+    }}
+    @IBOutlet weak var registerButton: UIButton! { didSet {
+        registerButton.configureButton(
+            title: TextManager.shared.registerButtonTitle,
+            titleFont: TextManager.shared.buttonTitleFont,
+            titleColor: .white,
+            gradientColors: ColorManager.color.registerButtonGradientColors
+        )
+    }}
+    @IBOutlet weak var skipButton: UIButton! { didSet {
+        skipButton.configureButton(
+            title: TextManager.shared.skipButtonTitle,
+            titleFont: TextManager.shared.buttonTitleFont,
+            titleColor: .white,
+            gradientColors: ColorManager.color.skipButtonGradientColors
+        )
+    }}
+    
     // MARK: - Properties
     var router: WelcomeRouterProtocol!
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupInitialTransforms()
         router = WelcomeRouter(viewController: self)
+        configureBackButton()
+        setupInitialTransforms()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -85,6 +81,11 @@ class WelcomeViewController: UIViewController {
             self.imageWelcome.transform = .identity
             self.labelWelcome.transform = .identity
         }
+    }
+    
+    private func configureBackButton() {
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
     }
 }
 

@@ -8,7 +8,7 @@
 import Foundation
 
 // Definición de la estructura del Producto
-struct Product {
+struct Product: Codable {
     var id: String
     var name: String
     var category: String

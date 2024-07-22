@@ -19,13 +19,24 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     }}
     @IBOutlet weak var registerButton: UIButton! { didSet {
         registerButton.setTitle(TextManager.shared.signUp, for: .normal)
+        registerButton.applyStyle(.subtitle, backgroundColor: .clear)
+        registerButton.setTitleColor(ColorManager.color.orange, for: .normal)
+    }}
+    @IBOutlet weak var labelAnswer: UILabel! { didSet {
+        labelAnswer.applyStyle(.body)
     }}
     @IBOutlet weak var logo1: UIImageView!
     @IBOutlet weak var passwordVisibilityButton: UIButton!
-    @IBOutlet var backgroundView: UIView!
-    @IBOutlet weak var fieldView: UIView!
-    @IBOutlet weak var userLoginText: UITextField!
-    @IBOutlet weak var passwordLoginText: UITextField!
+    @IBOutlet var backgroundView: UIView! 
+    @IBOutlet weak var fieldView: UIView! { didSet {
+        fieldView.backgroundColor = ColorManager.color.darkBackground
+    }}
+    @IBOutlet weak var userLoginText: UITextField!{ didSet {
+        userLoginText.configure(placeholder: TextManager.shared.user, placeholderColor: .lightGray, textColor: .white)
+    }}
+    @IBOutlet weak var passwordLoginText: UITextField! { didSet {
+        passwordLoginText.configure(placeholder: TextManager.shared.password, placeholderColor: .lightGray, textColor: .white)
+    }}
     @IBOutlet weak var buttonLogin: UIButton!
     @IBOutlet weak var loginApple: UIButton! { didSet {
         loginApple.setupAppleButton()
@@ -78,8 +89,8 @@ class LoginViewController: UIViewController, LoginViewProtocol {
             let isEmailValid = isValidEmail(userLoginText.text)
             let isPasswordValid = isValidPassword(passwordLoginText.text)
             
-            let style = (isEmailValid && isPasswordValid) ? ButtonStyle.gradient : ButtonStyle.gray
-            buttonLogin.configure(title: TextManager.shared.loginButtonTitleText, titleFont: .systemFont(ofSize: 18, weight: .bold), titleColor: .white, style: style, isEnabled: isEmailValid && isPasswordValid)
+            let style = (isEmailValid && isPasswordValid) ? ButtonStyle.orangeGradient : ButtonStyle.gray
+            buttonLogin.configure(title: TextManager.shared.loginButtonTitleText, titleFont: TextManager.shared.buttonTitleFont, titleColor: .white, style: style, isEnabled: isEmailValid && isPasswordValid)
         }
     
     private func isValidEmail(_ email: String?) -> Bool {
@@ -104,7 +115,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     
     private func configureBackButton() {
         let backButton = UIBarButtonItem()
-        backButton.title = ""
+        backButton.title = " "
         navigationController?.navigationBar.tintColor = .white
         navigationItem.backBarButtonItem = backButton
     }

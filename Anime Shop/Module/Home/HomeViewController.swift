@@ -14,12 +14,21 @@ protocol HomeViewProtocol: AnyObject {
 class HomeViewController: UIViewController, HomeViewProtocol {
     
     // MARK: - Outlets
+    
+    @IBOutlet var containerView: UIView! { didSet {
+        containerView.backgroundColor = ColorManager.color.darkBackground
+    }}
+    @IBOutlet weak var imageBackground: UIImageView! { didSet {
+        imageBackground.image = UIImage(named: "backgroundHome")
+        imageBackground.alpha = 1
+    }}
     @IBOutlet weak var labelTitle: UILabel! { didSet {
         labelTitle.attributedText = TextManager.shared.attributedWelcomeText()
 }}
     @IBOutlet weak var labelCategories: UILabel! { didSet {
         labelCategories.text = TextManager.shared.categoriesLabelText
-        labelCategories.applyStyle(.body)
+        labelCategories.applyStyle(.subtitle)
+        labelCategories.textColor = .white
     }}
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var buttonCategories: [UIButton]!
@@ -48,7 +57,6 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     // MARK: - Setup Methods
     private func setupUI() {
         setupButtonTitles()
-
         setupSearchBar()
         presenter?.fetchProducts()
     }
@@ -64,8 +72,10 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         let buttonTitles = TextManager.shared.categoryButtonTitles
         for (index, label) in labelCollectionCategories.enumerated() where index < buttonCategories.count {
             label.text = buttonTitles[index]
+            label.textColor = ColorManager.color.offWhite
             label.font = UIFont(name: "Avenir-Light", size: 16) ?? UIFont.systemFont(ofSize: 16)
             buttonCategories[index].setButtonStyle(.gray)
+           
         }
     }
     
@@ -86,8 +96,8 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     func updateButtonSelectionStates(for selectedButton: UIButton) {
         for (index, button) in buttonCategories.enumerated() {
             let isSelected = button == selectedButton
-            button.setButtonStyle(isSelected ? .gradient : .gray)
-            labelCollectionCategories[index].textColor = isSelected ? .black : .gray
+            button.setButtonStyle(isSelected ? .orangeGradient : .gray)
+            labelCollectionCategories[index].textColor = isSelected ? ColorManager.color.offWhite : ColorManager.color.offWhite
         }
     }
     
@@ -141,14 +151,22 @@ extension HomeViewController: UISearchBarDelegate {
 // MARK: - UISearchBar Customization
 extension UISearchBar {
     func customizeAppearance() {
-        self.layer.borderColor = UIColor(hex: "#04160F").cgColor
+        self.layer.borderColor = ColorManager.color.offWhite.cgColor
+        self.layer.backgroundColor = ColorManager.color.background.cgColor
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 10
         self.searchBarStyle = .minimal
-        self.searchTextField.borderStyle = .none
-        self.searchTextField.font = UIFont(name: "Avenir-Light", size: 16)
-        self.searchTextField.textColor = .black
-        self.searchTextField.backgroundColor = .white
-        self.searchTextField.attributedPlaceholder = NSAttributedString(string: TextManager.shared.searchBarPlaceholderText, attributes: [.foregroundColor: UIColor(hex: "#04160F")])
+        
+        guard let searchTextField = self.value(forKey: "searchField") as? UITextField else { return }
+        
+        searchTextField.borderStyle = .none
+        searchTextField.font = UIFont(name: "Avenir-Medium", size: 16)
+        searchTextField.textColor = ColorManager.color.offWhite
+//        searchTextField.backgroundColor = UIColor(hex: "#1C1B30")
+        searchTextField.attributedPlaceholder = NSAttributedString(string: TextManager.shared.searchBarPlaceholderText, attributes: [.foregroundColor: UIColor(hex: "#F4F4F4")])
+        
+        guard let leftView = searchTextField.leftView as? UIImageView else { return }
+        leftView.image = leftView.image?.withRenderingMode(.alwaysTemplate)
+        leftView.tintColor = ColorManager.color.offWhite
     }
 }

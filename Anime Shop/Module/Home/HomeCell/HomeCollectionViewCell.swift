@@ -13,13 +13,16 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageCard: UIView!
     @IBOutlet weak var productImageView: UIImageView!
-    @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var productPriceLabel: UILabel!
+    @IBOutlet weak var productNameLabel: UILabel! { didSet {
+        productNameLabel.applyStyle(.titleCell)
+        productNameLabel.numberOfLines = 0
+    }}
+    @IBOutlet weak var productPriceLabel: UILabel! { didSet {
+        productPriceLabel.applyStyle(.body)
+    }}
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureLabels()
         configureContainers()
-        
     }
     
     func configure(with product: Product) {
@@ -29,18 +32,13 @@ class HomeCollectionViewCell: UICollectionViewCell {
             productImageView.kf.setImage(with: url)
         }
     }
-    func configureLabels() {
-        productNameLabel.numberOfLines = 0
-        productNameLabel.font = UIFont(name: "Avenir-Medium", size: 14)
-        productNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        productPriceLabel.applyStyle(.body)
-    }
     
     func configureContainers() {
-        
         containerView.layer.cornerRadius = 15
-        containerView.setupShadowHex(shadowColorHex: "#7E92DE")
+        containerView.setupShadow(shadowColor: .black)
+        containerView.backgroundColor = ColorManager.color.darkBackground
+        containerView.layer.borderColor = ColorManager.color.purpleBlue.cgColor
+        containerView.layer.borderWidth = 0.7
         imageCard.layer.cornerRadius = 10
-    
     }
 }

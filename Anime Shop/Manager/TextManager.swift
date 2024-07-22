@@ -4,7 +4,6 @@
 //
 //  Created by Jesus Herrera on 21/07/24.
 //
-
 import UIKit
 
 class TextManager {
@@ -20,13 +19,9 @@ class TextManager {
     let signIn = "¡Accede!"
     let signUp = "¡Registrate!"
 
-    // Colores
-    let loginButtonGradientColors = [UIColor(hex: "#E2BAF1").cgColor, UIColor(hex: "#9198ff").cgColor]
-    let registerButtonGradientColors = [UIColor(hex: "#E2BAF1").cgColor, UIColor(hex: "#9198ff").cgColor]
-    let skipButtonGradientColors = [UIColor.gray.cgColor, UIColor.darkGray.cgColor]
-    let buttonBackgroundColor = UIColor(hex: "#374259")
-
-    let buttonTitleFont = UIFont(name: "Avenir-Medium", size: 18)!
+    // Fonts
+    let buttonTitleFont = UIFont(name: "Avenir-Heavy", size: 18)!
+    let textFieldFont = UIFont(name: "Avenir-Medium", size: 16)
     
     // Textos
     let welcomeLabelText = "AnimeShop"
@@ -44,12 +39,13 @@ class TextManager {
     let createAccount = "Crea tu cuenta"
     let yaTienesCuenta = "¿Ya tienes cuenta?"
     let aunNoTienesCuenta = "¿Aún no tienes cuenta?"
+    let password = "Contraseña"
+    let user = "Usuario"
     
     // Categorías
     let categoryButtonTitles = ["Todos", "Figura de Accion", "Ropa", "Peluches", "Accesorios"]
 
-    // Métodos adicionales para textos formateados, si es necesario
-    // colocar en extension
+    // Método para texto orange/blanco
     func attributedWelcomeText() -> NSAttributedString {
         let text = welcomeLabelText
         let attributedString = NSMutableAttributedString(string: text)
@@ -57,10 +53,10 @@ class TextManager {
         attributedString.addAttribute(.font, value: UIFont(name: "Avenir-Heavy", size: 24)!, range: NSRange(location: 0, length: text.count))
         
         let animeRange = (text as NSString).range(of: "Anime")
-        attributedString.addAttribute(.foregroundColor, value: UIColor(hex: "#535BE8"), range: animeRange)
+        attributedString.addAttribute(.foregroundColor, value: ColorManager.color.orange, range: animeRange)
         
         let shopRange = (text as NSString).range(of: "Shop")
-        attributedString.addAttribute(.foregroundColor, value: UIColor(hex: "#0E0E2E"), range: shopRange)
+        attributedString.addAttribute(.foregroundColor, value: ColorManager.color.offWhite, range: shopRange)
         
         return attributedString
     }

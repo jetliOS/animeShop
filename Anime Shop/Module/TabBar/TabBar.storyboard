@@ -18,11 +18,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Skc-0f-CRT">
                                 <rect key="frame" x="16" y="758" width="361" height="60"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ssi-kb-l6M">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ssi-kb-l6M">
                                         <rect key="frame" x="20" y="0.0" width="321" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bc2-2W-qRM">
-                                                <rect key="frame" x="0.0" y="19" width="114" height="22"/>
+                                                <rect key="frame" x="0.0" y="19" width="107" height="22"/>
                                                 <color key="tintColor" red="0.36111195540000002" green="0.43572489199999997" blue="0.74066131700000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" image="house.fill" catalog="system"/>
                                                 <connections>
@@ -30,7 +30,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbC-GU-DCz">
-                                                <rect key="frame" x="114" y="19" width="98" height="22"/>
+                                                <rect key="frame" x="107" y="19" width="107" height="22"/>
                                                 <color key="tintColor" red="0.36111195540000002" green="0.43572489199999997" blue="0.74066131700000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" image="heart" catalog="system"/>
                                                 <connections>
@@ -38,7 +38,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgP-Uh-wfo">
-                                                <rect key="frame" x="212" y="19" width="109" height="22"/>
+                                                <rect key="frame" x="214" y="19" width="107" height="22"/>
                                                 <color key="tintColor" red="0.36111195540000002" green="0.43572489199999997" blue="0.74066131700000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" image="cart" catalog="system"/>
                                                 <connections>

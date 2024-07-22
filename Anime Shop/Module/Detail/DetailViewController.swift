@@ -9,20 +9,35 @@ import UIKit
 protocol DetailViewProtocol: AnyObject {
     func displayProductDetails(_ product: Product)
     func updateTotalPriceLabel(with totalPrice: Double)
+    func updateCartButtonState(isItemSelected: Bool)
     
 }
 class DetailViewController: UIViewController, DetailViewProtocol {
     
     // MARK: - Outlets
+    
     @IBOutlet weak var containerView1: UIView!
-    @IBOutlet weak var containerView2: UIView!
-    @IBOutlet weak var containerBar: UIView!
+    @IBOutlet weak var containerView2: UIView! { didSet {
+        containerView2.backgroundColor = ColorManager.color.darkBackground
+    }}
+
+    @IBOutlet weak var cartIconBtn: UIButton! { didSet {
+        cartIconBtn.tintColor = ColorManager.color.orange
+    }}
     @IBOutlet weak var imageDetail: UIImageView!
+    @IBOutlet var containerView: UIView! { didSet {
+        containerView.backgroundColor = ColorManager.color.background
+    }}
+    @IBOutlet weak var imageBackground: UIImageView! { didSet {
+        imageBackground.image = UIImage(named: "detailBackgrnd")
+        imageBackground.alpha = 0.07
+    }}
     @IBOutlet weak var titleDetail: UILabel! { didSet {
         titleDetail.applyStyle(.titleSmall)
     }}
     @IBOutlet weak var priceDetail: UILabel! { didSet {
         priceDetail.applyStyle(.subtitle)
+        priceDetail.textColor = ColorManager.color.lightOrange
     }}
     @IBOutlet weak var titleDescriptionDetail: UILabel! { didSet {
         titleDescriptionDetail.applyStyle(.titleSmall)
@@ -63,20 +78,29 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        configureCartButton()
         presenter?.loadProductDetails()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleCartUpdate), name: .cartDidUpdate, object: nil)
+        presenter?.loadCartState()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
+    @objc private func handleCartUpdate() {
+        presenter?.loadCartState()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .cartDidUpdate, object: nil)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         configureCartButton()
+        presenter?.loadCartState()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.loadCartState()
+    }
     // MARK: - UI Setup
     private func setupUI() {
         configureContainerViews()
@@ -104,7 +128,6 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     
     func updateTotalPriceLabel(with totalPrice: Double) {
         totalPriceLabel.text = String(format: "S/ %.2f", totalPrice)
-        
     }
     
     private func updateStepper() {
@@ -142,10 +165,15 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     
     @IBAction func addCartBtnTapped(_ sender: Any) {
         presenter?.addProductToCart(quantity: digitData)
-        isItemSelected.toggle()
+        isItemSelected = true
+        presenter?.saveCartState(isItemSelected: isItemSelected)
         configureCartButton()
+        
+        containerStepper.backgroundColor = ColorManager.color.customgray
+        plusButton.isEnabled = false
+        minusButton.isEnabled = false
+        addCartBtn.isEnabled = false
     }
-    
     @IBAction func backAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -160,7 +188,7 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         
         let attributes: [NSAttributedString.Key: Any] = [
             .paragraphStyle: paragraphStyle,
-            .foregroundColor: UIColor(hex: "#374259")
+            .foregroundColor: ColorManager.color.offWhite
         ]
         
         descriptionDetail.attributedText = NSAttributedString(string: descriptionDetail.text ?? "", attributes: attributes)
@@ -171,10 +199,33 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         containerView2.layer.cornerRadius = 30
         containerStepper.layer.cornerRadius = containerStepper.frame.size.height / 2
     }
-    
+
     private func configureCartButton() {
-        addCartBtn.setButtonStyle(isItemSelected ? .gradient : .gray)
+        addCartBtn.setButtonStyle(isItemSelected ? .gray : .orangeGradient)
         labelButton.text = isItemSelected ? TextManager.shared.addedToCartButtonTitle : TextManager.shared.addToCartButtonTitle
         labelButton.applyStyle(.subtitle)
+        addCartBtn.isEnabled = !isItemSelected
+        containerStepper.backgroundColor = isItemSelected ? ColorManager.color.customgray : ColorManager.color.offWhite
     }
+    
+    func updateCartButtonState(isItemSelected: Bool) {
+        print("DetailViewController: Updating cart button state to \(isItemSelected)")
+        self.isItemSelected = isItemSelected
+        configureCartButton()
+        if isItemSelected {
+            containerStepper.backgroundColor = ColorManager.color.customgray
+            plusButton.isEnabled = false
+            minusButton.isEnabled = false
+            addCartBtn.isEnabled = false
+        } else {
+            containerStepper.backgroundColor = ColorManager.color.offWhite
+            plusButton.isEnabled = true
+            minusButton.isEnabled = true
+            addCartBtn.isEnabled = true
+        }
+    }
+}
+
+extension Notification.Name {
+    static let cartDidUpdate = Notification.Name("cartDidUpdate")
 }

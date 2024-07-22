@@ -10,7 +10,22 @@ import UIKit
 class CartTableViewCell: UITableViewCell {
 
 
-    @IBOutlet weak var stepperContainer: UIView!
+    @IBOutlet weak var contentView1: UIView! { didSet {
+        contentView1.backgroundColor = ColorManager.color.background
+    }}
+    @IBOutlet weak var containerView: UIView! { didSet {
+        containerView.layer.cornerRadius = 15
+        containerView.backgroundColor = ColorManager.color.darkBackground
+        containerView.layer.borderColor = ColorManager.color.purpleBlue.cgColor
+        containerView.layer.borderWidth = 0.7
+    }}
+    @IBOutlet weak var stepperContainer: UIView! { didSet {
+        stepperContainer.backgroundColor = ColorManager.color.background
+        stepperContainer.layer.cornerRadius = stepperContainer.frame.size.height / 2
+        stepperContainer.layer.masksToBounds = true
+        stepperContainer.layer.borderWidth = 0.7
+        stepperContainer.layer.borderColor = ColorManager.color.offWhite.cgColor
+    }}
     @IBOutlet weak var stackviewStepper: UIStackView!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
@@ -76,8 +91,11 @@ class CartTableViewCell: UITableViewCell {
             }
         }
     @IBAction func deleteBtn(_ sender: Any) {
+        guard let product = product else { return }
+        UserDefaults.standard.set(false, forKey: "isItemSelected_\(product.id)")
+        print("CartTableViewCell: Set isItemSelected to false for productId = \(product.id)")
         deleteProductCallback?()
-        
+        NotificationCenter.default.post(name: .cartDidUpdate, object: nil)
     }
     
     private func updateTotalPrice() {

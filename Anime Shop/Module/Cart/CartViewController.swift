@@ -9,6 +9,10 @@ import UIKit
 
 
 class CartViewController: UIViewController {
+    
+    @IBOutlet var containerView: UIView! { didSet {
+        containerView.backgroundColor = ColorManager.color.background
+    }}
     @IBOutlet weak var labelTitle: UILabel! { didSet {
         labelTitle.text = TextManager.shared.cartTitleText
         labelTitle.applyStyle(.title)
@@ -18,8 +22,7 @@ class CartViewController: UIViewController {
         labelText.applyStyle(.body)
     }}
     @IBOutlet weak var priceLabel: UILabel! { didSet {
-        priceLabel.text = TextManager.shared.totalText
-        priceLabel.applyStyle(.body)
+        priceLabel.applyStyle(.subtitle)
     }}
     @IBOutlet weak var totalLabel: UILabel! { didSet {
         totalLabel.text = TextManager.shared.totalText
@@ -29,18 +32,18 @@ class CartViewController: UIViewController {
         checkoutBtn.configureButton(
             title: TextManager.shared.checkoutButtonTitle,
             titleFont: TextManager.shared.buttonTitleFont,
-            titleColor: .white,
-            gradientColors: TextManager.shared.registerButtonGradientColors)
+            titleColor: ColorManager.color.offWhite,
+            gradientColors: [ColorManager.color.orange.cgColor, ColorManager.color.lightOrange.cgColor])
     }}
-    @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var tableView: UITableView!
     
     var products: [Product] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupTableView()
+        loadCart()
         
     }
     
@@ -54,6 +57,11 @@ class CartViewController: UIViewController {
         tableView.reloadData()
         priceLabel.text = String(format: "S/ %.2f", CartManager.shared.getTotalPrice())
     }
+    
+    func loadCart() {
+            CartManager.shared.loadCart() 
+            updateCart()
+        }
     
     @IBAction func checkoutBtnAction(_ sender: Any) {
         
@@ -76,6 +84,9 @@ class CartViewController: UIViewController {
     func removeProduct(at index: Int) {
         let product = products[index]
         CartManager.shared.removeProduct(product)
+        UserDefaults.standard.set(false, forKey: "isItemSelected_\(product.id)")
+        print("CartViewController: Set isItemSelected to false for productId = \(product.id)")
+        NotificationCenter.default.post(name: .cartDidUpdate, object: nil)
         updateCart()
     }
 }
